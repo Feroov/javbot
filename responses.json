@@ -1,0 +1,106 @@
+{
+    "what is a method?": {
+        "answer": "A method in Java is a reusable block of code that performs a specific task. You can call a method multiple times to avoid repeating code.",
+        "code": "```java\n// This method prints a greeting\npublic void sayHello() {\n    System.out.println(\"Hello!\");\n}\n\n// Call the method\nsayHello();  // Output: Hello!\n```"
+    },
+    "what is a variable?": {
+        "answer": "A variable is a container that holds data. It can store numbers, text, or other types of data.",
+        "code": "```java\n// Declaring a variable to hold a number\nint number = 10;\n\n// Declaring a variable to hold text\nString name = \"Alice\";\n\n// Output the variable values\nSystem.out.println(number);  // Output: 10\nSystem.out.println(name);  // Output: Alice\n```"
+    },
+    "how do I print in java?": {
+        "answer": "In Java, you use the `System.out.println()` method to print text or variables to the console.",
+        "code": "```java\n// Printing a simple message\nSystem.out.println(\"Hello, World!\");  // Output: Hello, World!\n\n// Printing a variable\nint age = 25;\nSystem.out.println(\"Your age is \" + age);  // Output: Your age is 25\n```"
+    },
+    "what is a class?": {
+        "answer": "A class in Java is a template used to create objects. It defines the properties and behaviors of those objects.",
+        "code": "```java\n// Defining a class named Car\npublic class Car {\n    // Properties of the Car\n    String model;\n    int year;\n\n    // A method to describe the Car\n    public void describe() {\n        System.out.println(\"Model: \" + model + \", Year: \" + year);\n    }\n}\n\n// Creating an object from the Car class\nCar myCar = new Car();\nmyCar.model = \"Tesla\";\nmyCar.year = 2021;\n\n// Calling the describe method\nmyCar.describe();  // Output: Model: Tesla, Year: 2021\n```"
+    },
+    "what is an object?": {
+        "answer": "An object is an instance of a class. It has its own values for the properties defined by the class.",
+        "code": "```java\n// Defining a class named Dog\npublic class Dog {\n    String name;\n    int age;\n\n    // A method to make the dog bark\n    public void bark() {\n        System.out.println(name + \" is barking!\");\n    }\n}\n\n// Creating a Dog object\nDog myDog = new Dog();\nmyDog.name = \"Buddy\";\nmyDog.age = 3;\n\n// Calling the bark method\nmyDog.bark();  // Output: Buddy is barking!\n```"
+    },
+    "what is a loop?": {
+        "answer": "Loops are used to repeat a block of code multiple times. A `for` loop runs a specific number of times.",
+        "code": "```java\n// A simple for loop that runs 5 times\nfor (int i = 0; i < 5; i++) {\n    System.out.println(\"Iteration: \" + i);\n}\n// Output: Iteration: 0\n//         Iteration: 1\n//         Iteration: 2\n//         Iteration: 3\n//         Iteration: 4\n```"
+    },
+    "what is an if statement?": {
+        "answer": "An `if` statement lets you run code only if a condition is true.",
+        "code": "```java\nint age = 20;\n\n// Checking if the person is an adult\nif (age >= 18) {\n    System.out.println(\"You are an adult.\");\n} else {\n    System.out.println(\"You are not an adult.\");\n}\n// Output: You are an adult.\n```"
+    },
+    "what is java?": {
+        "answer": "Java is a popular, versatile programming language designed to be platform-independent ('Write Once, Run Anywhere'). It's object-oriented, secure, and widely used for developing desktop, web, and mobile applications.",
+        "code": "```java\n// Your first Java program\npublic class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, Welcome to Java!\");\n    }\n}\n```"
+    },
+    "tell me about java": {
+        "answer": "Java is one of the world's most popular programming languages. It's known for:\n• Being platform-independent\n• Strong object-oriented features\n• Rich standard library\n• Strong security\n• Automatic memory management\n• Large community support",
+        "code": null
+    },
+    "how do i start with java?": {
+        "answer": "To start with Java, you'll need to:\n1. Install the Java Development Kit (JDK)\n2. Set up an Integrated Development Environment (IDE) like Eclipse or IntelliJ\n3. Learn the basic syntax and concepts\n\nHere's a simple program to get you started:",
+        "code": "```java\npublic class FirstProgram {\n    public static void main(String[] args) {\n        // This is a comment\n        String message = \"Welcome to Java!\";\n        System.out.println(message);\n    }\n}\n```"
+    },
+    "what are data types in java?": {
+        "answer": "Java has two categories of data types:\n1. Primitive Types:\n   • byte, short, int, long (integers)\n   • float, double (decimals)\n   • char (single character)\n   • boolean (true/false)\n2. Reference Types:\n   • String, Arrays, Classes, Interfaces",
+        "code": "```java\npublic class DataTypes {\n    public void examples() {\n        // Primitive types\n        byte smallNumber = 127;\n        int number = 1000;\n        double decimal = 3.14;\n        char letter = 'A';\n        boolean flag = true;\n\n        // Reference types\n        String text = \"Hello\";\n        int[] numbers = {1, 2, 3};\n    }\n}\n```"
+    },
+    "what are arrays?": {
+        "answer": "Arrays in Java are containers that hold a fixed number of values of the same type. They are used to store multiple values in a single variable.",
+        "code": "```java\n// Creating and using arrays\nint[] numbers = new int[5];         // Array of 5 integers\nnumbers[0] = 10;                    // Setting first element\n\n// Array initialization\nString[] fruits = {\"apple\", \"banana\", \"orange\"};\n\n// Accessing elements\nSystem.out.println(fruits[0]);     // Prints: apple\n\n// Array length\nSystem.out.println(fruits.length); // Prints: 3\n```"
+    },
+    "what is object oriented programming?": {
+        "answer": "Object-Oriented Programming (OOP) in Java is a programming paradigm based on objects that contain data and code. The main principles are:\n• Encapsulation (data hiding)\n• Inheritance (code reuse)\n• Polymorphism (many forms)\n• Abstraction (complexity hiding)",
+        "code": "```java\n// Example of OOP concepts\npublic class Animal {\n    private String name;    // Encapsulation\n    \n    public void makeSound() {\n        System.out.println(\"Some sound\");\n    }\n}\n\npublic class Dog extends Animal {    // Inheritance\n    @Override\n    public void makeSound() {        // Polymorphism\n        System.out.println(\"Woof!\");\n    }\n}\n```"
+    },
+    "what is encapsulation?": {
+        "answer": "Encapsulation in Java is the practice of bundling data (variables) and methods that operate on the data into a single unit or class. It also involves restricting access to some of an object's components, which is achieved by using access modifiers like `private`, `public`, and `protected`.",
+        "code": "```java\n// Example of Encapsulation\npublic class Person {\n    private String name;    // Private variable, only accessible within this class\n    private int age;\n\n    // Public getter and setter methods to access private data\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public int getAge() {\n        return age;\n    }\n\n    public void setAge(int age) {\n        this.age = age;\n    }\n}\n\n// Using Encapsulation\nPerson person = new Person();\nperson.setName(\"Alice\");\nperson.setAge(30);\nSystem.out.println(person.getName());  // Output: Alice\n```"
+    },
+    "what is inheritance?": {
+        "answer": "Inheritance in Java is a mechanism where a new class (called subclass or child class) is derived from an existing class (called superclass or parent class). The subclass inherits fields and methods from the superclass, allowing code reuse and polymorphism.",
+        "code": "```java\n// Example of Inheritance\nclass Vehicle {\n    public void move() {\n        System.out.println(\"The vehicle is moving\");\n    }\n}\n\nclass Car extends Vehicle {    // Car is inheriting from Vehicle\n    public void honk() {\n        System.out.println(\"The car is honking\");\n    }\n}\n\n// Using Inheritance\nCar myCar = new Car();\nmyCar.move();   // Output: The vehicle is moving\nmyCar.honk();   // Output: The car is honking\n```"
+    },
+    "what is polymorphism?": {
+        "answer": "Polymorphism in Java allows one entity, such as a method or object, to take on many forms. This is commonly seen when a parent class reference is used to refer to a child class object. There are two types of polymorphism: compile-time (method overloading) and runtime (method overriding).",
+        "code": "```java\n// Example of Runtime Polymorphism (Method Overriding)\nclass Animal {\n    public void sound() {\n        System.out.println(\"This animal makes a sound\");\n    }\n}\n\nclass Cat extends Animal {\n    @Override\n    public void sound() {\n        System.out.println(\"Meow\");\n    }\n}\n\nclass Dog extends Animal {\n    @Override\n    public void sound() {\n        System.out.println(\"Bark\");\n    }\n}\n\n// Polymorphism in action\nAnimal myAnimal = new Dog();  // Dog object with Animal reference\nmyAnimal.sound();  // Output: Bark\n```"
+    },
+    "what is abstraction?": {
+        "answer": "Abstraction in Java is a principle of OOP that hides implementation details and exposes only the necessary parts of an object or method. This can be achieved through abstract classes and interfaces.",
+        "code": "```java\n// Example of Abstraction using Abstract Class\nabstract class Animal {\n    public abstract void sound();  // Abstract method (no implementation)\n    public void sleep() {\n        System.out.println(\"The animal is sleeping\");  // Concrete method\n    }\n}\n\nclass Cat extends Animal {\n    public void sound() {\n        System.out.println(\"Meow\");\n    }\n}\n\n// Using Abstraction\nCat myCat = new Cat();\nmyCat.sound();  // Output: Meow\nmyCat.sleep();  // Output: The animal is sleeping\n```"
+    },
+    "what is method overloading?": {
+        "answer": "Method overloading in Java is when two or more methods in the same class have the same name but different parameter lists. This allows a method to handle different types or numbers of inputs.",
+        "code": "```java\n// Example of Method Overloading\npublic class Calculator {\n    public int add(int a, int b) {\n        return a + b;\n    }\n\n    public double add(double a, double b) {    // Overloaded method\n        return a + b;\n    }\n}\n\n// Using overloaded methods\nCalculator calc = new Calculator();\nSystem.out.println(calc.add(10, 20));         // Output: 30\nSystem.out.println(calc.add(10.5, 20.5));    // Output: 31.0\n```"
+    },
+    "what is method overriding?": {
+        "answer": "Method overriding in Java occurs when a subclass provides a specific implementation for a method that is already defined in its superclass. The overridden method in the child class must have the same signature (name, return type, and parameters).",
+        "code": "```java\n// Example of Method Overriding\nclass Parent {\n    public void greet() {\n        System.out.println(\"Hello from Parent\");\n    }\n}\n\nclass Child extends Parent {\n    @Override\n    public void greet() {\n        System.out.println(\"Hello from Child\");\n    }\n}\n\n// Using Overriding\nParent obj = new Child();\nobj.greet();  // Output: Hello from Child\n```"
+    },
+    "what is an interface?": {
+        "answer": "An interface in Java is a reference type that can contain only constants, method signatures, default methods, static methods, and nested types. Interfaces allow you to define a contract for classes without implementing the methods.",
+        "code": "```java\n// Example of Interface\ninterface Animal {\n    public void eat();   // Abstract method\n}\n\nclass Dog implements Animal {   // Implements the interface\n    public void eat() {\n        System.out.println(\"Dog is eating\");\n    }\n}\n\n// Using the interface\nDog myDog = new Dog();\nmyDog.eat();  // Output: Dog is eating\n```"
+    },
+    "what is a constructor?": {
+        "answer": "A constructor in Java is a special method that is used to initialize objects. It is called when an object of a class is created. A constructor has the same name as the class and no return type.",
+        "code": "```java\n// Example of Constructor\nclass Car {\n    String model;\n    int year;\n\n    // Constructor\n    public Car(String model, int year) {\n        this.model = model;\n        this.year = year;\n    }\n\n    public void display() {\n        System.out.println(\"Model: \" + model + \", Year: \" + year);\n    }\n}\n\n// Creating an object with a constructor\nCar myCar = new Car(\"Tesla\", 2021);\nmyCar.display();  // Output: Model: Tesla, Year: 2021\n```"
+    },
+    "what is exception handling?": {
+        "answer": "Exception handling in Java is the process of managing runtime errors or unusual conditions. Java uses `try`, `catch`, and `finally` blocks to handle exceptions and prevent program crashes.",
+        "code": "```java\n// Example of Exception Handling\npublic class Main {\n    public static void main(String[] args) {\n        try {\n            int division = 10 / 0;  // This will cause an exception\n        } catch (ArithmeticException e) {\n            System.out.println(\"Cannot divide by zero\");\n        } finally {\n            System.out.println(\"This will always execute\");\n        }\n    }\n}\n```"
+    },
+    "what is a try-catch block?": {
+        "answer": "In Java, the `try-catch` block is used to handle exceptions. The code that may throw an exception is placed inside the `try` block, and the `catch` block handles the exception.",
+        "code": "```java\n// Example of Try-Catch Block\npublic class Main {\n    public static void main(String[] args) {\n        try {\n            String str = null;\n            System.out.println(str.length());  // This will cause NullPointerException\n        } catch (NullPointerException e) {\n            System.out.println(\"Caught a NullPointerException\");\n        }\n    }\n}\n```"
+    },
+    "what is the finally block?": {
+        "answer": "The `finally` block in Java is used to execute important code such as closing resources, regardless of whether an exception is thrown or not. It always executes after the `try-catch` block.",
+        "code": "```java\n// Example of Finally Block\npublic class Main {\n    public static void main(String[] args) {\n        try {\n            int[] numbers = {1, 2, 3};\n            System.out.println(numbers[5]);   // ArrayIndexOutOfBoundsException\n        } catch (ArrayIndexOutOfBoundsException e) {\n            System.out.println(\"Array index out of bounds\");\n        } finally {\n            System.out.println(\"This will always run\");\n        }\n    }\n}\n```"
+    },
+    "what are access modifiers in java?": {
+        "answer": "Access modifiers in Java define the visibility and accessibility of classes, methods, and variables. Java has four main access modifiers:\n• `public`: accessible from anywhere\n• `private`: accessible only within the same class\n• `protected`: accessible within the same package or subclasses\n• (default) no modifier: accessible within the same package",
+        "code": "```java\n// Example of Access Modifiers\npublic class Example {\n    public int publicVar = 10;    // Accessible from anywhere\n    private int privateVar = 20;  // Accessible only within this class\n    protected int protectedVar = 30;  // Accessible within the package or subclasses\n\n    public int getPrivateVar() {\n        return privateVar;   // Accessing private variable through a public method\n    }\n}\n\n// Using access modifiers\nExample obj = new Example();\nSystem.out.println(obj.publicVar);  // Output: 10\nSystem.out.println(obj.getPrivateVar());  // Output: 20\n```"
+    },
+    "what is static in java?": {
+        "answer": "The `static` keyword in Java is used to indicate that a member (variable or method) belongs to the class itself, rather than to instances of the class. This means you can access a static member without creating an object of the class.",
+        "code": "```java\n// Example of Static Members\npublic class MathUtils {\n    public static int add(int a, int b) {\n        return a + b;\n    }\n}\n\n// Using static method\nint result = MathUtils.add(5, 10);   // No need to create an object\nSystem.out.println(result);  // Output: 15\n```"
+    }
+}
