@@ -1,106 +1,832 @@
 {
     "what is a method?": {
+        "label": "what is a method?",
         "answer": "A method in Java is a reusable block of code that performs a specific task. You can call a method multiple times to avoid repeating code.",
         "code": "```java\n// This method prints a greeting\npublic void sayHello() {\n    System.out.println(\"Hello!\");\n}\n\n// Call the method\nsayHello();  // Output: Hello!\n```"
     },
     "what is a variable?": {
+        "label": "what is a variable?",
         "answer": "A variable is a container that holds data. It can store numbers, text, or other types of data.",
         "code": "```java\n// Declaring a variable to hold a number\nint number = 10;\n\n// Declaring a variable to hold text\nString name = \"Alice\";\n\n// Output the variable values\nSystem.out.println(number);  // Output: 10\nSystem.out.println(name);  // Output: Alice\n```"
     },
     "how do I print in java?": {
+        "label": "how do I print in java?",
         "answer": "In Java, you use the `System.out.println()` method to print text or variables to the console.",
         "code": "```java\n// Printing a simple message\nSystem.out.println(\"Hello, World!\");  // Output: Hello, World!\n\n// Printing a variable\nint age = 25;\nSystem.out.println(\"Your age is \" + age);  // Output: Your age is 25\n```"
     },
     "what is a class?": {
+        "label": "what is a class?",
         "answer": "A class in Java is a template used to create objects. It defines the properties and behaviors of those objects.",
         "code": "```java\n// Defining a class named Car\npublic class Car {\n    // Properties of the Car\n    String model;\n    int year;\n\n    // A method to describe the Car\n    public void describe() {\n        System.out.println(\"Model: \" + model + \", Year: \" + year);\n    }\n}\n\n// Creating an object from the Car class\nCar myCar = new Car();\nmyCar.model = \"Tesla\";\nmyCar.year = 2021;\n\n// Calling the describe method\nmyCar.describe();  // Output: Model: Tesla, Year: 2021\n```"
     },
     "what is an object?": {
+        "label": "what is an object?",
         "answer": "An object is an instance of a class. It has its own values for the properties defined by the class.",
         "code": "```java\n// Defining a class named Dog\npublic class Dog {\n    String name;\n    int age;\n\n    // A method to make the dog bark\n    public void bark() {\n        System.out.println(name + \" is barking!\");\n    }\n}\n\n// Creating a Dog object\nDog myDog = new Dog();\nmyDog.name = \"Buddy\";\nmyDog.age = 3;\n\n// Calling the bark method\nmyDog.bark();  // Output: Buddy is barking!\n```"
     },
     "what is a loop?": {
+        "label": "what is a loop?",
         "answer": "Loops are used to repeat a block of code multiple times. A `for` loop runs a specific number of times.",
         "code": "```java\n// A simple for loop that runs 5 times\nfor (int i = 0; i < 5; i++) {\n    System.out.println(\"Iteration: \" + i);\n}\n// Output: Iteration: 0\n//         Iteration: 1\n//         Iteration: 2\n//         Iteration: 3\n//         Iteration: 4\n```"
     },
     "what is an if statement?": {
+        "label": "what is an if statement?",
         "answer": "An `if` statement lets you run code only if a condition is true.",
         "code": "```java\nint age = 20;\n\n// Checking if the person is an adult\nif (age >= 18) {\n    System.out.println(\"You are an adult.\");\n} else {\n    System.out.println(\"You are not an adult.\");\n}\n// Output: You are an adult.\n```"
     },
     "what is java?": {
+        "label": "what is java?",
         "answer": "Java is a popular, versatile programming language designed to be platform-independent ('Write Once, Run Anywhere'). It's object-oriented, secure, and widely used for developing desktop, web, and mobile applications.",
         "code": "```java\n// Your first Java program\npublic class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, Welcome to Java!\");\n    }\n}\n```"
     },
     "tell me about java": {
+        "label": "tell me about java",
         "answer": "Java is one of the world's most popular programming languages. It's known for:\n• Being platform-independent\n• Strong object-oriented features\n• Rich standard library\n• Strong security\n• Automatic memory management\n• Large community support",
         "code": null
     },
     "how do i start with java?": {
+        "label": "how do i start with java?",
         "answer": "To start with Java, you'll need to:\n1. Install the Java Development Kit (JDK)\n2. Set up an Integrated Development Environment (IDE) like Eclipse or IntelliJ\n3. Learn the basic syntax and concepts\n\nHere's a simple program to get you started:",
         "code": "```java\npublic class FirstProgram {\n    public static void main(String[] args) {\n        // This is a comment\n        String message = \"Welcome to Java!\";\n        System.out.println(message);\n    }\n}\n```"
     },
     "what are data types in java?": {
+        "label": "what are data types in java?",
         "answer": "Java has two categories of data types:\n1. Primitive Types:\n   • byte, short, int, long (integers)\n   • float, double (decimals)\n   • char (single character)\n   • boolean (true/false)\n2. Reference Types:\n   • String, Arrays, Classes, Interfaces",
         "code": "```java\npublic class DataTypes {\n    public void examples() {\n        // Primitive types\n        byte smallNumber = 127;\n        int number = 1000;\n        double decimal = 3.14;\n        char letter = 'A';\n        boolean flag = true;\n\n        // Reference types\n        String text = \"Hello\";\n        int[] numbers = {1, 2, 3};\n    }\n}\n```"
     },
     "what are arrays?": {
+        "label": "what are arrays?",
         "answer": "Arrays in Java are containers that hold a fixed number of values of the same type. They are used to store multiple values in a single variable.",
         "code": "```java\n// Creating and using arrays\nint[] numbers = new int[5];         // Array of 5 integers\nnumbers[0] = 10;                    // Setting first element\n\n// Array initialization\nString[] fruits = {\"apple\", \"banana\", \"orange\"};\n\n// Accessing elements\nSystem.out.println(fruits[0]);     // Prints: apple\n\n// Array length\nSystem.out.println(fruits.length); // Prints: 3\n```"
     },
     "what is object oriented programming?": {
+        "label": "what is object oriented programming?",
         "answer": "Object-Oriented Programming (OOP) in Java is a programming paradigm based on objects that contain data and code. The main principles are:\n• Encapsulation (data hiding)\n• Inheritance (code reuse)\n• Polymorphism (many forms)\n• Abstraction (complexity hiding)",
         "code": "```java\n// Example of OOP concepts\npublic class Animal {\n    private String name;    // Encapsulation\n    \n    public void makeSound() {\n        System.out.println(\"Some sound\");\n    }\n}\n\npublic class Dog extends Animal {    // Inheritance\n    @Override\n    public void makeSound() {        // Polymorphism\n        System.out.println(\"Woof!\");\n    }\n}\n```"
     },
     "what is encapsulation?": {
+        "label": "what is encapsulation?",
         "answer": "Encapsulation in Java is the practice of bundling data (variables) and methods that operate on the data into a single unit or class. It also involves restricting access to some of an object's components, which is achieved by using access modifiers like `private`, `public`, and `protected`.",
         "code": "```java\n// Example of Encapsulation\npublic class Person {\n    private String name;    // Private variable, only accessible within this class\n    private int age;\n\n    // Public getter and setter methods to access private data\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public int getAge() {\n        return age;\n    }\n\n    public void setAge(int age) {\n        this.age = age;\n    }\n}\n\n// Using Encapsulation\nPerson person = new Person();\nperson.setName(\"Alice\");\nperson.setAge(30);\nSystem.out.println(person.getName());  // Output: Alice\n```"
     },
     "what is inheritance?": {
+        "label": "what is inheritance?",
         "answer": "Inheritance in Java is a mechanism where a new class (called subclass or child class) is derived from an existing class (called superclass or parent class). The subclass inherits fields and methods from the superclass, allowing code reuse and polymorphism.",
         "code": "```java\n// Example of Inheritance\nclass Vehicle {\n    public void move() {\n        System.out.println(\"The vehicle is moving\");\n    }\n}\n\nclass Car extends Vehicle {    // Car is inheriting from Vehicle\n    public void honk() {\n        System.out.println(\"The car is honking\");\n    }\n}\n\n// Using Inheritance\nCar myCar = new Car();\nmyCar.move();   // Output: The vehicle is moving\nmyCar.honk();   // Output: The car is honking\n```"
     },
     "what is polymorphism?": {
+        "label": "what is polymorphism?",
         "answer": "Polymorphism in Java allows one entity, such as a method or object, to take on many forms. This is commonly seen when a parent class reference is used to refer to a child class object. There are two types of polymorphism: compile-time (method overloading) and runtime (method overriding).",
         "code": "```java\n// Example of Runtime Polymorphism (Method Overriding)\nclass Animal {\n    public void sound() {\n        System.out.println(\"This animal makes a sound\");\n    }\n}\n\nclass Cat extends Animal {\n    @Override\n    public void sound() {\n        System.out.println(\"Meow\");\n    }\n}\n\nclass Dog extends Animal {\n    @Override\n    public void sound() {\n        System.out.println(\"Bark\");\n    }\n}\n\n// Polymorphism in action\nAnimal myAnimal = new Dog();  // Dog object with Animal reference\nmyAnimal.sound();  // Output: Bark\n```"
     },
     "what is abstraction?": {
+        "label": "what is abstraction?",
         "answer": "Abstraction in Java is a principle of OOP that hides implementation details and exposes only the necessary parts of an object or method. This can be achieved through abstract classes and interfaces.",
         "code": "```java\n// Example of Abstraction using Abstract Class\nabstract class Animal {\n    public abstract void sound();  // Abstract method (no implementation)\n    public void sleep() {\n        System.out.println(\"The animal is sleeping\");  // Concrete method\n    }\n}\n\nclass Cat extends Animal {\n    public void sound() {\n        System.out.println(\"Meow\");\n    }\n}\n\n// Using Abstraction\nCat myCat = new Cat();\nmyCat.sound();  // Output: Meow\nmyCat.sleep();  // Output: The animal is sleeping\n```"
     },
     "what is method overloading?": {
+        "label": "what is method overloading?",
         "answer": "Method overloading in Java is when two or more methods in the same class have the same name but different parameter lists. This allows a method to handle different types or numbers of inputs.",
         "code": "```java\n// Example of Method Overloading\npublic class Calculator {\n    public int add(int a, int b) {\n        return a + b;\n    }\n\n    public double add(double a, double b) {    // Overloaded method\n        return a + b;\n    }\n}\n\n// Using overloaded methods\nCalculator calc = new Calculator();\nSystem.out.println(calc.add(10, 20));         // Output: 30\nSystem.out.println(calc.add(10.5, 20.5));    // Output: 31.0\n```"
     },
     "what is method overriding?": {
+        "label": "what is method overriding?",
         "answer": "Method overriding in Java occurs when a subclass provides a specific implementation for a method that is already defined in its superclass. The overridden method in the child class must have the same signature (name, return type, and parameters).",
         "code": "```java\n// Example of Method Overriding\nclass Parent {\n    public void greet() {\n        System.out.println(\"Hello from Parent\");\n    }\n}\n\nclass Child extends Parent {\n    @Override\n    public void greet() {\n        System.out.println(\"Hello from Child\");\n    }\n}\n\n// Using Overriding\nParent obj = new Child();\nobj.greet();  // Output: Hello from Child\n```"
     },
     "what is an interface?": {
+        "label": "what is an interface?",
         "answer": "An interface in Java is a reference type that can contain only constants, method signatures, default methods, static methods, and nested types. Interfaces allow you to define a contract for classes without implementing the methods.",
         "code": "```java\n// Example of Interface\ninterface Animal {\n    public void eat();   // Abstract method\n}\n\nclass Dog implements Animal {   // Implements the interface\n    public void eat() {\n        System.out.println(\"Dog is eating\");\n    }\n}\n\n// Using the interface\nDog myDog = new Dog();\nmyDog.eat();  // Output: Dog is eating\n```"
     },
     "what is a constructor?": {
+        "label": "what is a constructor?",
         "answer": "A constructor in Java is a special method that is used to initialize objects. It is called when an object of a class is created. A constructor has the same name as the class and no return type.",
         "code": "```java\n// Example of Constructor\nclass Car {\n    String model;\n    int year;\n\n    // Constructor\n    public Car(String model, int year) {\n        this.model = model;\n        this.year = year;\n    }\n\n    public void display() {\n        System.out.println(\"Model: \" + model + \", Year: \" + year);\n    }\n}\n\n// Creating an object with a constructor\nCar myCar = new Car(\"Tesla\", 2021);\nmyCar.display();  // Output: Model: Tesla, Year: 2021\n```"
     },
     "what is exception handling?": {
+        "label": "what is exception handling?",
         "answer": "Exception handling in Java is the process of managing runtime errors or unusual conditions. Java uses `try`, `catch`, and `finally` blocks to handle exceptions and prevent program crashes.",
         "code": "```java\n// Example of Exception Handling\npublic class Main {\n    public static void main(String[] args) {\n        try {\n            int division = 10 / 0;  // This will cause an exception\n        } catch (ArithmeticException e) {\n            System.out.println(\"Cannot divide by zero\");\n        } finally {\n            System.out.println(\"This will always execute\");\n        }\n    }\n}\n```"
     },
     "what is a try-catch block?": {
+        "label": "what is a try-catch block?",
         "answer": "In Java, the `try-catch` block is used to handle exceptions. The code that may throw an exception is placed inside the `try` block, and the `catch` block handles the exception.",
         "code": "```java\n// Example of Try-Catch Block\npublic class Main {\n    public static void main(String[] args) {\n        try {\n            String str = null;\n            System.out.println(str.length());  // This will cause NullPointerException\n        } catch (NullPointerException e) {\n            System.out.println(\"Caught a NullPointerException\");\n        }\n    }\n}\n```"
     },
     "what is the finally block?": {
+        "label": "what is the finally block?",
         "answer": "The `finally` block in Java is used to execute important code such as closing resources, regardless of whether an exception is thrown or not. It always executes after the `try-catch` block.",
         "code": "```java\n// Example of Finally Block\npublic class Main {\n    public static void main(String[] args) {\n        try {\n            int[] numbers = {1, 2, 3};\n            System.out.println(numbers[5]);   // ArrayIndexOutOfBoundsException\n        } catch (ArrayIndexOutOfBoundsException e) {\n            System.out.println(\"Array index out of bounds\");\n        } finally {\n            System.out.println(\"This will always run\");\n        }\n    }\n}\n```"
     },
     "what are access modifiers in java?": {
+        "label": "what are access modifiers in java?",
         "answer": "Access modifiers in Java define the visibility and accessibility of classes, methods, and variables. Java has four main access modifiers:\n• `public`: accessible from anywhere\n• `private`: accessible only within the same class\n• `protected`: accessible within the same package or subclasses\n• (default) no modifier: accessible within the same package",
         "code": "```java\n// Example of Access Modifiers\npublic class Example {\n    public int publicVar = 10;    // Accessible from anywhere\n    private int privateVar = 20;  // Accessible only within this class\n    protected int protectedVar = 30;  // Accessible within the package or subclasses\n\n    public int getPrivateVar() {\n        return privateVar;   // Accessing private variable through a public method\n    }\n}\n\n// Using access modifiers\nExample obj = new Example();\nSystem.out.println(obj.publicVar);  // Output: 10\nSystem.out.println(obj.getPrivateVar());  // Output: 20\n```"
     },
     "what is static in java?": {
+        "label": "what is static in java?",
         "answer": "The `static` keyword in Java is used to indicate that a member (variable or method) belongs to the class itself, rather than to instances of the class. This means you can access a static member without creating an object of the class.",
         "code": "```java\n// Example of Static Members\npublic class MathUtils {\n    public static int add(int a, int b) {\n        return a + b;\n    }\n}\n\n// Using static method\nint result = MathUtils.add(5, 10);   // No need to create an object\nSystem.out.println(result);  // Output: 15\n```"
+    },
+    "What are operators in Java?": {
+        "label": "What are operators in Java?",
+        "answer": "Operators in Java are symbols used to perform operations on variables and values. Java supports various types of operators, including arithmetic, relational, logical, bitwise, and more.",
+        "code": "```java\n// Example of using arithmetic and relational operators\nint a = 10;\nint b = 20;\nint sum = a + b;  // Arithmetic operator\nboolean isEqual = (a == b);  // Relational operator\nSystem.out.println(\"Sum: \" + sum);  // Output: Sum: 30\nSystem.out.println(\"Is equal: \" + isEqual);  // Output: Is equal: false\n```"
+    },
+    "What is the difference between == and .equals()?": {
+        "label": "What is the difference between == and .equals()?",
+        "answer": "In Java, `==` checks if two references point to the same object in memory, while `.equals()` compares the actual content of objects. For primitive types, `==` compares values directly.",
+        "code": "```java\nString s1 = new String(\"hello\");\nString s2 = new String(\"hello\");\n\nSystem.out.println(s1 == s2);        // Output: false (compares memory references)\nSystem.out.println(s1.equals(s2));   // Output: true (compares the actual content)\n```"
+    },
+    "What are arithmetic operators?": {
+        "label": "What are arithmetic operators?",
+        "answer": "Arithmetic operators in Java are used to perform basic mathematical operations such as addition, subtraction, multiplication, and division.",
+        "code": "```java\nint a = 10;\nint b = 5;\nSystem.out.println(a + b);  // Output: 15\nSystem.out.println(a - b);  // Output: 5\nSystem.out.println(a * b);  // Output: 50\nSystem.out.println(a / b);  // Output: 2\n```"
+    },
+    "What are relational operators?": {
+        "label": "What are relational operators?",
+        "answer": "Relational operators in Java are used to compare two values. They return a boolean result based on the comparison.",
+        "code": "```java\nint a = 10;\nint b = 20;\nSystem.out.println(a == b);  // Output: false\nSystem.out.println(a != b);  // Output: true\nSystem.out.println(a > b);   // Output: false\nSystem.out.println(a < b);   // Output: true\n```"
+    },
+    "What are logical operators?": {
+        "label": "What are logical operators?",
+        "answer": "Logical operators in Java are used to perform logical operations. They include AND (`&&`), OR (`||`), and NOT (`!`). They are used with boolean expressions.",
+        "code": "```java\nboolean x = true;\nboolean y = false;\nSystem.out.println(x && y);  // Output: false (AND)\nSystem.out.println(x || y);  // Output: true (OR)\nSystem.out.println(!x);      // Output: false (NOT)\n```"
+    },
+    "What is the conditional (ternary) operator?": {
+        "label": "What is the conditional (ternary) operator?",
+        "answer": "The ternary operator in Java is a shorthand for an `if-else` statement. It takes three operands: a condition, a result for `true`, and a result for `false`.",
+        "code": "```java\nint a = 10;\nint b = 20;\nint max = (a > b) ? a : b;\nSystem.out.println(\"Max: \" + max);  // Output: Max: 20\n```"
+    },
+    "What is operator precedence?": {
+        "label": "What is operator precedence?",
+        "answer": "Operator precedence in Java defines the order in which operators are evaluated in an expression. For example, multiplication (`*`) has higher precedence than addition (`+`).",
+        "code": "```java\nint result = 10 + 5 * 2;  // Multiplication happens first\nSystem.out.println(result);  // Output: 20\n```"
+    },
+    "What are control flow statements in Java?": {
+        "label": "What are control flow statements in Java?",
+        "answer": "Control flow statements in Java are used to determine the flow of execution in a program. These include `if`, `switch`, loops (`for`, `while`, `do-while`), and jump statements (`break`, `continue`).",
+        "code": "```java\n// Example of if statement\nint age = 18;\nif (age >= 18) {\n    System.out.println(\"You are an adult.\");\n} else {\n    System.out.println(\"You are not an adult.\");\n}\n```"
+    },
+    "What is an if statement in Java?": {
+        "label": "What is an if statement in Java?",
+        "answer": "An `if` statement in Java is used to execute a block of code if a specified condition is true.",
+        "code": "```java\nint number = 10;\nif (number > 5) {\n    System.out.println(\"Number is greater than 5\");\n}\n```"
+    },
+    "What is an if-else statement?": {
+        "label": "What is an if-else statement?",
+        "answer": "An `if-else` statement in Java is used to execute one block of code if a condition is true, and another block if the condition is false.",
+        "code": "```java\nint age = 16;\nif (age >= 18) {\n    System.out.println(\"Adult\");\n} else {\n    System.out.println(\"Minor\");\n}\n```"
+    },
+    "What is a switch statement?": {
+        "label": "What is a switch statement?",
+        "answer": "A `switch` statement in Java allows you to execute different blocks of code based on the value of an expression. It’s useful when you have multiple conditions to check.",
+        "code": "```java\nint day = 3;\nswitch (day) {\n    case 1:\n        System.out.println(\"Monday\");\n        break;\n    case 2:\n        System.out.println(\"Tuesday\");\n        break;\n    case 3:\n        System.out.println(\"Wednesday\");\n        break;\n    default:\n        System.out.println(\"Other day\");\n}\n```"
+    },
+    "What is a for loop?": {
+        "label": "What is a for loop?",
+        "answer": "A `for` loop in Java is used to repeat a block of code a specific number of times. It consists of an initialization, a condition, and an increment/decrement.",
+        "code": "```java\nfor (int i = 0; i < 5; i++) {\n    System.out.println(\"Iteration: \" + i);\n}\n```"
+    },
+    "What is a while loop?": {
+        "label": "What is a while loop?",
+        "answer": "A `while` loop in Java repeatedly executes a block of code as long as the specified condition is true.",
+        "code": "```java\nint i = 0;\nwhile (i < 5) {\n    System.out.println(\"Iteration: \" + i);\n    i++;\n}\n```"
+    },
+    "What is a do-while loop?": {
+        "label": "What is a do-while loop?",
+        "answer": "A `do-while` loop in Java is similar to a `while` loop, but it guarantees that the code block is executed at least once, as the condition is evaluated after the loop body.",
+        "code": "```java\nint i = 0;\ndo {\n    System.out.println(\"Iteration: \" + i);\n    i++;\n} while (i < 5);\n```"
+    },
+    "What is break and continue?": {
+        "label": "What is break and continue?",
+        "answer": "In Java, `break` is used to exit a loop or switch statement prematurely, while `continue` skips the current iteration of a loop and moves to the next iteration.",
+        "code": "```java\nfor (int i = 0; i < 5; i++) {\n    if (i == 3) {\n        continue;  // Skip the rest of the loop when i == 3\n    }\n    if (i == 4) {\n        break;  // Exit the loop when i == 4\n    }\n    System.out.println(i);\n}\n```"
+    },
+    "What is a labeled break statement?": {
+        "label": "What is a labeled break statement?",
+        "answer": "A labeled `break` in Java allows you to break out of a specific outer loop or block. It uses a label before the loop to control where the break should apply.",
+        "code": "```java\nouterLoop:\nfor (int i = 0; i < 3; i++) {\n    for (int j = 0; j < 3; j++) {\n        if (i == 1 && j == 1) {\n            break outerLoop;  // Exit the outer loop\n        }\n        System.out.println(\"i = \" + i + \", j = \" + j);\n    }\n}\n```"
+    },
+    "What is a method in Java?": {
+        "label": "What is a method in Java?",
+        "answer": "A method in Java is a block of code that performs a specific task. It is called by its name and can be executed multiple times, allowing you to reuse code.",
+        "code": "```java\n// Defining a method\npublic void sayHello() {\n    System.out.println(\"Hello!\");\n}\n\n// Calling the method\nsayHello();  // Output: Hello!\n```"
+    },
+    "What is the return type of a method?": {
+        "label": "What is the return type of a method?",
+        "answer": "The return type of a method in Java is the data type of the value the method returns. If a method doesn’t return any value, its return type is `void`.",
+        "code": "```java\n// Method returning an integer\npublic int getNumber() {\n    return 42;\n}\n\n// Method returning nothing (void)\npublic void printMessage() {\n    System.out.println(\"Hello, World!\");\n}\n```"
+    },
+    "What is method overloading?": {
+        "label": "What is method overloading?",
+        "answer": "Method overloading in Java occurs when multiple methods have the same name but different parameter lists (different type, number, or order of parameters). It allows the same method to handle different inputs.",
+        "code": "```java\npublic class Calculator {\n    // Overloaded methods\n    public int add(int a, int b) {\n        return a + b;\n    }\n\n    public double add(double a, double b) {\n        return a + b;\n    }\n}\n\n// Using overloaded methods\nCalculator calc = new Calculator();\nSystem.out.println(calc.add(10, 20));         // Output: 30\nSystem.out.println(calc.add(10.5, 20.5));    // Output: 31.0\n```"
+    },
+    "What is method overriding?": {
+        "label": "What is method overriding?",
+        "answer": "Method overriding occurs when a subclass provides its own implementation of a method that is already defined in the parent class. The overridden method must have the same name, return type, and parameters.",
+        "code": "```java\nclass Parent {\n    public void greet() {\n        System.out.println(\"Hello from Parent\");\n    }\n}\n\nclass Child extends Parent {\n    @Override\n    public void greet() {\n        System.out.println(\"Hello from Child\");\n    }\n}\n\n// Using Overriding\nParent obj = new Child();\nobj.greet();  // Output: Hello from Child\n```"
+    },
+    "What is a constructor in Java?": {
+        "label": "What is a constructor in Java?",
+        "answer": "A constructor in Java is a special method that initializes an object. It has the same name as the class and is called when an object is created.",
+        "code": "```java\nclass Car {\n    String model;\n    int year;\n\n    // Constructor\n    public Car(String model, int year) {\n        this.model = model;\n        this.year = year;\n    }\n}\n\n// Creating an object with a constructor\nCar myCar = new Car(\"Tesla\", 2021);\nSystem.out.println(myCar.model + \" - \" + myCar.year);  // Output: Tesla - 2021\n```"
+    },
+    "What is a default constructor?": {
+        "label": "What is a default constructor?",
+        "answer": "A default constructor in Java is the constructor that is automatically created by the compiler if no other constructors are defined. It takes no parameters and initializes objects with default values.",
+        "code": "```java\nclass Car {\n    String model;\n    int year;\n\n    // Default constructor (created by Java if no constructor is defined)\n    public Car() {\n        this.model = \"Unknown\";\n        this.year = 0;\n    }\n}\n\n// Creating an object using the default constructor\nCar myCar = new Car();\nSystem.out.println(myCar.model + \" - \" + myCar.year);  // Output: Unknown - 0\n```"
+    },
+    "What is a parameterized constructor?": {
+        "label": "What is a parameterized constructor?",
+        "answer": "A parameterized constructor in Java is a constructor that takes arguments, allowing you to initialize an object with specific values.",
+        "code": "```java\nclass Car {\n    String model;\n    int year;\n\n    // Parameterized constructor\n    public Car(String model, int year) {\n        this.model = model;\n        this.year = year;\n    }\n}\n\n// Creating an object using the parameterized constructor\nCar myCar = new Car(\"Tesla\", 2021);\nSystem.out.println(myCar.model + \" - \" + myCar.year);  // Output: Tesla - 2021\n```"
+    },
+    "What is the difference between a method and a constructor?": {
+        "label": "What is the difference between a method and a constructor?",
+        "answer": "A constructor is used to initialize an object when it is created, while a method is used to perform a specific task after the object has been created. A constructor has the same name as the class and has no return type, whereas a method can have any name and must specify a return type.",
+        "code": "```java\nclass Car {\n    String model;\n\n    // Constructor\n    public Car(String model) {\n        this.model = model;\n    }\n\n    // Method\n    public void displayModel() {\n        System.out.println(\"Model: \" + this.model);\n    }\n}\n\nCar myCar = new Car(\"Tesla\");  // Constructor is called\nmyCar.displayModel();           // Method is called - Output: Model: Tesla\n```"
+    },
+    "What is the void keyword?": {
+        "label": "What is the void keyword?",
+        "answer": "The `void` keyword in Java is used to indicate that a method does not return any value.",
+        "code": "```java\npublic void sayHello() {\n    System.out.println(\"Hello!\");\n}\n\n// This method returns nothing\nsayHello();  // Output: Hello!\n```"
+    },
+    "How to pass parameters to a method?": {
+        "label": "How to pass parameters to a method?",
+        "answer": "In Java, you can pass parameters to a method by specifying them in the method's signature. The parameters are then used within the method body.",
+        "code": "```java\npublic void greet(String name) {\n    System.out.println(\"Hello, \" + name);\n}\n\n// Passing parameters to the method\nString userName = \"Alice\";\ngreet(userName);  // Output: Hello, Alice\n```"
+    },
+    "What are varargs (variable arguments) in Java?": {
+        "label": "What are varargs (variable arguments) in Java?",
+        "answer": "Varargs (variable arguments) in Java allow you to pass an arbitrary number of arguments to a method. This is achieved by using an ellipsis (`...`) in the method signature.",
+        "code": "```java\npublic void printNumbers(int... numbers) {\n    for (int number : numbers) {\n        System.out.println(number);\n    }\n}\n\n// Calling the method with different numbers of arguments\nprintNumbers(1, 2, 3);  // Output: 1 2 3\nprintNumbers(4, 5);     // Output: 4 5\n```"
+    },
+    "What is recursion in Java?": {
+        "label": "What is recursion in Java?",
+        "answer": "Recursion in Java is the process where a method calls itself to solve smaller instances of a problem. It requires a base case to terminate the recursion and avoid infinite loops.",
+        "code": "```java\n// Example of recursion: calculating factorial\npublic int factorial(int n) {\n    if (n == 1) {\n        return 1;  // Base case\n    }\n    return n * factorial(n - 1);  // Recursive case\n}\n\n// Calling the recursive method\nSystem.out.println(factorial(5));  // Output: 120\n```"
+    },
+    "What is object-oriented programming?": {
+        "label": "What is object-oriented programming?",
+        "answer": "Object-Oriented Programming (OOP) is a programming paradigm based on the concept of 'objects,' which can contain data in the form of fields (attributes) and code in the form of methods (functions). The main principles of OOP are encapsulation, inheritance, polymorphism, and abstraction.",
+        "code": "```java\nclass Animal {\n    String name;\n    void speak() {\n        System.out.println(\"The animal speaks\");\n    }\n}\n\nclass Dog extends Animal {\n    @Override\n    void speak() {\n        System.out.println(\"Woof!\");\n    }\n}\n```"
+    },
+    "What is a class in Java?": {
+        "label": "What is a class in Java?",
+        "answer": "A class in Java is a blueprint for creating objects. It defines the properties (fields) and behaviors (methods) that the objects created from the class will have.",
+        "code": "```java\npublic class Car {\n    String model;\n    int year;\n\n    public void displayInfo() {\n        System.out.println(\"Model: \" + model + \", Year: \" + year);\n    }\n}\n```"
+    },
+    "What is an object in Java?": {
+        "label": "What is an object in Java?",
+        "answer": "An object in Java is an instance of a class. It has its own state (attributes) and behavior (methods), defined by the class from which it is created.",
+        "code": "```java\n// Creating an object from the Car class\nCar myCar = new Car();\nmyCar.model = \"Tesla\";\nmyCar.year = 2021;\nmyCar.displayInfo();  // Output: Model: Tesla, Year: 2021\n```"
+    },
+    "What is encapsulation in Java?": {
+        "label": "What is encapsulation in Java?",
+        "answer": "Encapsulation is the principle of bundling data (variables) and methods that operate on the data into a single unit or class. It also involves restricting access to some of the object's components by using access modifiers like `private`, `public`, and `protected`.",
+        "code": "```java\npublic class Person {\n    private String name;   // Private field\n\n    // Public getter and setter methods\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n}\n```"
+    },
+    "What is inheritance in Java?": {
+        "label": "What is inheritance in Java?",
+        "answer": "Inheritance is a mechanism in Java where a new class (subclass) inherits fields and methods from an existing class (superclass). This promotes code reuse and establishes a parent-child relationship between classes.",
+        "code": "```java\nclass Vehicle {\n    public void move() {\n        System.out.println(\"Vehicle is moving\");\n    }\n}\n\nclass Car extends Vehicle {\n    public void honk() {\n        System.out.println(\"Car is honking\");\n    }\n}\n```"
+    },
+    "What is polymorphism in Java?": {
+        "label": "What is polymorphism in Java?",
+        "answer": "Polymorphism in Java allows one entity (such as a method or object) to take on many forms. This can be achieved through method overriding (runtime polymorphism) or method overloading (compile-time polymorphism).",
+        "code": "```java\nclass Animal {\n    public void makeSound() {\n        System.out.println(\"Animal makes sound\");\n    }\n}\n\nclass Dog extends Animal {\n    @Override\n    public void makeSound() {\n        System.out.println(\"Woof!\");\n    }\n}\n\nAnimal myDog = new Dog();\nmyDog.makeSound();  // Output: Woof!\n```"
+    },
+    "What is abstraction in Java?": {
+        "label": "What is abstraction in Java?",
+        "answer": "Abstraction in Java is the concept of hiding implementation details and exposing only the necessary parts of an object or method. This can be achieved using abstract classes and interfaces.",
+        "code": "```java\nabstract class Animal {\n    public abstract void sound();   // Abstract method\n    public void sleep() {\n        System.out.println(\"The animal sleeps\");  // Concrete method\n    }\n}\n\nclass Dog extends Animal {\n    public void sound() {\n        System.out.println(\"Woof!\");\n    }\n}\n```"
+    },
+    "What are the four pillars of OOP?": {
+        "label": "What are the four pillars of OOP?",
+        "answer": "The four pillars of Object-Oriented Programming (OOP) are:\n1. Encapsulation\n2. Inheritance\n3. Polymorphism\n4. Abstraction",
+        "code": null
+    },
+    "What is the difference between inheritance and composition?": {
+        "label": "What is the difference between inheritance and composition?",
+        "answer": "Inheritance is a relationship where a class derives from a parent class and inherits its properties and methods. Composition is a 'has-a' relationship where a class contains objects of other classes as part of its fields.",
+        "code": "```java\n// Inheritance\nclass Engine {\n    public void start() {\n        System.out.println(\"Engine starts\");\n    }\n}\n\nclass Car extends Engine {\n    public void drive() {\n        System.out.println(\"Car is driving\");\n    }\n}\n\n// Composition\nclass Car {\n    private Engine engine;\n\n    public Car() {\n        engine = new Engine();  // Car has an engine\n    }\n    public void startCar() {\n        engine.start();\n    }\n}\n```"
+    },
+    "What is a superclass and a subclass?": {
+        "label": "What is a superclass and a subclass?",
+        "answer": "A superclass (or parent class) is a class that is inherited by another class. A subclass (or child class) is a class that extends or inherits from the superclass, gaining access to its fields and methods.",
+        "code": "```java\nclass Animal {  // Superclass\n    public void eat() {\n        System.out.println(\"Eating...\");\n    }\n}\n\nclass Dog extends Animal {  // Subclass\n    public void bark() {\n        System.out.println(\"Barking...\");\n    }\n}\n```"
+    },
+    "What is the this keyword in Java?": {
+        "label": "What is the this keyword in Java?",
+        "answer": "The `this` keyword in Java is used to refer to the current instance of a class. It is commonly used to avoid naming conflicts between instance variables and parameters.",
+        "code": "```java\npublic class Person {\n    private String name;\n\n    public Person(String name) {\n        this.name = name;  // 'this' refers to the current instance's name variable\n    }\n}\n```"
+    },
+    "What is the super keyword in Java?": {
+        "label": "What is the super keyword in Java?",
+        "answer": "The `super` keyword in Java is used to refer to the parent class (superclass). It can be used to access superclass methods or constructors.",
+        "code": "```java\nclass Animal {\n    public void eat() {\n        System.out.println(\"Animal eats\");\n    }\n}\n\nclass Dog extends Animal {\n    @Override\n    public void eat() {\n        super.eat();  // Call the superclass method\n        System.out.println(\"Dog eats\");\n    }\n}\n```"
+    },
+    "What is the final keyword in Java?": {
+        "label": "What is the final keyword in Java?",
+        "answer": "The `final` keyword in Java can be used to declare constants, prevent method overriding, or prevent inheritance of a class. It can be applied to variables, methods, and classes.",
+        "code": "```java\n// Final variable\nfinal int MAX_SPEED = 120;\n\n// Final method\nclass Vehicle {\n    public final void start() {\n        System.out.println(\"Vehicle starts\");\n    }\n}\n\n// Final class\nfinal class Car {\n    // No other class can extend Car\n}\n```"
+    },
+    "What is multiple inheritance?": {
+        "label": "What is multiple inheritance?",
+        "answer": "Multiple inheritance occurs when a class inherits from more than one class. Java does not support multiple inheritance with classes due to the 'diamond problem', but it can be achieved with interfaces.",
+        "code": "```java\ninterface Engine {\n    void start();\n}\n\ninterface Wheels {\n    void rotate();\n}\n\nclass Car implements Engine, Wheels {  // Multiple inheritance using interfaces\n    public void start() {\n        System.out.println(\"Engine starts\");\n    }\n    public void rotate() {\n        System.out.println(\"Wheels rotate\");\n    }\n}\n```"
+    },
+    "What is the difference between method overloading and overriding?": {
+        "label": "What is the difference between method overloading and overriding?",
+        "answer": "Method overloading occurs when two or more methods in the same class have the same name but different parameter lists. Method overriding occurs when a subclass provides a specific implementation of a method already defined in its superclass.",
+        "code": "```java\n// Method Overloading\nclass Calculator {\n    public int add(int a, int b) { return a + b; }\n    public double add(double a, double b) { return a + b; }\n}\n\n// Method Overriding\nclass Animal {\n    public void sound() { System.out.println(\"Animal sound\"); }\n}\nclass Dog extends Animal {\n    @Override\n    public void sound() { System.out.println(\"Woof\"); }\n}\n```"
+    },
+    "What is the instanceof operator?": {
+        "label": "What is the instanceof operator?",
+        "answer": "The `instanceof` operator in Java is used to test whether an object is an instance of a specific class or implements a particular interface. It returns `true` if the object is an instance of the specified class or interface.",
+        "code": "```java\nDog dog = new Dog();\nSystem.out.println(dog instanceof Animal);  // Output: true\nSystem.out.println(dog instanceof Dog);     // Output: true\n```"
+    },
+    "What are access modifiers in Java? (public, private, protected, default)": {
+        "label": "What are access modifiers in Java? (public, private, protected, default)",
+        "answer": "Access modifiers in Java control the visibility of classes, methods, and variables:\n- `public`: Accessible from anywhere.\n- `private`: Accessible only within the same class.\n- `protected`: Accessible within the same package or by subclasses.\n- Default (no modifier): Accessible within the same package.",
+        "code": "```java\npublic class Example {\n    public int publicVar = 10;\n    private int privateVar = 20;\n    protected int protectedVar = 30;\n    int defaultVar = 40;  // Default access modifier\n}\n```"
+    },
+    "What are arrays in Java?": {
+        "label": "What are arrays in Java?",
+        "answer": "Arrays in Java are containers that store a fixed number of elements of the same data type. Once an array is created, its size cannot be changed.",
+        "code": "```java\nint[] numbers = new int[5];  // Array of 5 integers\nnumbers[0] = 10;\nnumbers[1] = 20;\nSystem.out.println(numbers[0]);  // Output: 10\n```"
+    },
+    "What is a multidimensional array?": {
+        "label": "What is a multidimensional array?",
+        "answer": "A multidimensional array in Java is an array of arrays. The most common form is the two-dimensional array, which can be visualized as a table with rows and columns.",
+        "code": "```java\nint[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};\nSystem.out.println(matrix[0][1]);  // Output: 2\n```"
+    },
+    "How do I initialize an array in Java?": {
+        "label": "How do I initialize an array in Java?",
+        "answer": "You can initialize an array in Java either by specifying the size and then assigning values, or by using an array literal during declaration.",
+        "code": "```java\n// Initializing an array with size\nint[] numbers = new int[3];\nnumbers[0] = 1;\nnumbers[1] = 2;\nnumbers[2] = 3;\n\n// Initializing an array using literals\nint[] moreNumbers = {4, 5, 6};\n```"
+    },
+    "What are enhanced for loops (for-each loops)?": {
+        "label": "What are enhanced for loops (for-each loops)?",
+        "answer": "Enhanced for loops, or for-each loops, are used to iterate over arrays or collections. They simplify looping by eliminating the need for a counter variable.",
+        "code": "```java\nint[] numbers = {1, 2, 3, 4, 5};\nfor (int number : numbers) {\n    System.out.println(number);\n}\n// Output: 1 2 3 4 5\n```"
+    },
+    "What is the ArrayList class?": {
+        "label": "What is the ArrayList class?",
+        "answer": "The `ArrayList` class in Java is a resizable array implementation of the `List` interface. Unlike arrays, `ArrayList` can dynamically grow and shrink as needed.",
+        "code": "```java\nimport java.util.ArrayList;\n\nArrayList<String> list = new ArrayList<>();\nlist.add(\"Apple\");\nlist.add(\"Banana\");\nSystem.out.println(list);  // Output: [Apple, Banana]\n```"
+    },
+    "What is the difference between arrays and ArrayList?": {
+        "label": "What is the difference between arrays and ArrayList?",
+        "answer": "Arrays have a fixed size, while `ArrayList` is dynamic and can grow or shrink. Arrays can store both primitive types and objects, while `ArrayList` can only store objects.",
+        "code": "```java\n// Array\nint[] numbers = {1, 2, 3};\n\n// ArrayList\nArrayList<Integer> numList = new ArrayList<>();\nnumList.add(1);\nnumList.add(2);\nnumList.add(3);\n```"
+    },
+    "What is a LinkedList?": {
+        "label": "What is a LinkedList?",
+        "answer": "A `LinkedList` in Java is a doubly linked list implementation of the `List` and `Deque` interfaces. Unlike `ArrayList`, it allows for efficient insertions and deletions but has slower access times.",
+        "code": "```java\nimport java.util.LinkedList;\n\nLinkedList<String> linkedList = new LinkedList<>();\nlinkedList.add(\"A\");\nlinkedList.add(\"B\");\nSystem.out.println(linkedList);  // Output: [A, B]\n```"
+    },
+    "What are collections in Java?": {
+        "label": "What are collections in Java?",
+        "answer": "Collections in Java are data structures used to store and manipulate groups of objects. Examples include `List`, `Set`, `Map`, `ArrayList`, `HashSet`, and more.",
+        "code": null
+    },
+    "What is the Collection framework?": {
+        "label": "What is the Collection framework?",
+        "answer": "The Java Collection Framework is a set of classes and interfaces that provide common data structures like `List`, `Set`, and `Map`, as well as algorithms to manipulate them.",
+        "code": null
+    },
+    "What is the difference between List, Set, and Map in Java?": {
+        "label": "What is the difference between List, Set, and Map in Java?",
+        "answer": "In Java:\n- `List` is an ordered collection that allows duplicate elements.\n- `Set` is an unordered collection that does not allow duplicates.\n- `Map` is a collection of key-value pairs, where keys are unique.",
+        "code": "```java\nimport java.util.*;\n\nList<String> list = new ArrayList<>();  // List allows duplicates\nlist.add(\"Apple\");\nlist.add(\"Apple\");\n\nSet<String> set = new HashSet<>();  // Set does not allow duplicates\nset.add(\"Apple\");\nset.add(\"Apple\");\n\nMap<String, Integer> map = new HashMap<>();  // Map stores key-value pairs\nmap.put(\"Apple\", 1);\nmap.put(\"Banana\", 2);\n```"
+    },
+    "What is a HashMap?": {
+        "label": "What is a HashMap?",
+        "answer": "A `HashMap` in Java is a data structure that stores key-value pairs. It allows fast lookups by using a hash code to index the keys, but the order of entries is not maintained.",
+        "code": "```java\nimport java.util.HashMap;\n\nHashMap<String, Integer> map = new HashMap<>();\nmap.put(\"Apple\", 1);\nmap.put(\"Banana\", 2);\nSystem.out.println(map.get(\"Apple\"));  // Output: 1\n```"
+    },
+    "What is a HashSet?": {
+        "label": "What is a HashSet?",
+        "answer": "A `HashSet` in Java is a collection that contains unique elements and uses a hash table for storage. It allows for fast operations but does not maintain the order of elements.",
+        "code": "```java\nimport java.util.HashSet;\n\nHashSet<String> set = new HashSet<>();\nset.add(\"Apple\");\nset.add(\"Banana\");\nset.add(\"Apple\");  // Duplicates are not allowed\nSystem.out.println(set);  // Output: [Apple, Banana]\n```"
+    },
+    "What is a TreeMap?": {
+        "label": "What is a TreeMap?",
+        "answer": "A `TreeMap` in Java is a `Map` implementation that stores its entries in a sorted order according to the natural ordering of its keys, or by a custom comparator.",
+        "code": "```java\nimport java.util.TreeMap;\n\nTreeMap<String, Integer> map = new TreeMap<>();\nmap.put(\"Banana\", 2);\nmap.put(\"Apple\", 1);\nmap.put(\"Orange\", 3);\nSystem.out.println(map);  // Output: {Apple=1, Banana=2, Orange=3}\n```"
+    },
+    "How do I iterate over a list in Java?": {
+        "label": "How do I iterate over a list in Java?",
+        "answer": "You can iterate over a list in Java using a regular `for` loop, an enhanced `for` loop, or using an iterator.",
+        "code": "```java\nimport java.util.ArrayList;\n\nArrayList<String> list = new ArrayList<>();\nlist.add(\"Apple\");\nlist.add(\"Banana\");\n\n// Using for-each loop\nfor (String fruit : list) {\n    System.out.println(fruit);\n}\n\n// Using Iterator\nIterator<String> iterator = list.iterator();\nwhile (iterator.hasNext()) {\n    System.out.println(iterator.next());\n}\n```"
+    },
+    "What are Generics in Java?": {
+        "label": "What are Generics in Java?",
+        "answer": "Generics in Java allow you to create classes, interfaces, and methods that operate on types specified by the user. They provide type safety and allow code reusability.",
+        "code": "```java\n// Example of Generics with ArrayList\nArrayList<String> list = new ArrayList<>();\nlist.add(\"Apple\");\nlist.add(\"Banana\");\nSystem.out.println(list);\n\n// Generic method example\npublic <T> void printArray(T[] array) {\n    for (T element : array) {\n        System.out.println(element);\n    }\n}\n```"
+    },
+    "What is a String in Java?": {
+        "label": "What is a String in Java?",
+        "answer": "A `String` in Java is an object that represents a sequence of characters. Strings are widely used for storing and manipulating text data in Java. They are immutable, meaning their values cannot be changed once created.",
+        "code": "```java\nString greeting = \"Hello, World!\";\nSystem.out.println(greeting);  // Output: Hello, World!\n```"
+    },
+    "What is String immutability in Java?": {
+        "label": "What is String immutability in Java?",
+        "answer": "In Java, `String` objects are immutable, which means once a `String` object is created, its value cannot be modified. If any operation appears to modify a string, a new `String` object is created instead, leaving the original unchanged.",
+        "code": "```java\nString str = \"Hello\";\nstr = str.concat(\" World\");  // A new String is created\nSystem.out.println(str);  // Output: Hello World\n```"
+    },
+    "What is the difference between String, StringBuilder, and StringBuffer?": {
+        "label": "What is the difference between String, StringBuilder, and StringBuffer?",
+        "answer": "`String` is immutable, meaning it cannot be changed once created. `StringBuilder` and `StringBuffer` are mutable, meaning they can be modified. `StringBuffer` is synchronized (thread-safe), while `StringBuilder` is not, making `StringBuilder` faster in single-threaded scenarios.",
+        "code": "```java\n// String (immutable)\nString str = \"Hello\";\nstr.concat(\" World\");  // This creates a new String\n\n// StringBuilder (mutable)\nStringBuilder sb = new StringBuilder(\"Hello\");\nsb.append(\" World\");\nSystem.out.println(sb.toString());  // Output: Hello World\n\n// StringBuffer (mutable and synchronized)\nStringBuffer sbf = new StringBuffer(\"Hello\");\nsbf.append(\" World\");\nSystem.out.println(sbf.toString());  // Output: Hello World\n```"
+    },
+    "What is the concat() method in Java?": {
+        "label": "What is the concat() method in Java?",
+        "answer": "The `concat()` method in Java is used to concatenate two strings. Since `String` is immutable, this method returns a new string, leaving the original string unchanged.",
+        "code": "```java\nString str1 = \"Hello\";\nString str2 = \" World\";\nString result = str1.concat(str2);\nSystem.out.println(result);  // Output: Hello World\n```"
+    },
+    "How do I compare two Strings in Java?": {
+        "label": "How do I compare two Strings in Java?",
+        "answer": "In Java, you can compare two strings using the `equals()` method for content comparison, or the `==` operator to compare references. You can also use the `compareTo()` method to compare strings lexicographically.",
+        "code": "```java\nString str1 = \"Hello\";\nString str2 = \"Hello\";\n\n// Using equals() for content comparison\nSystem.out.println(str1.equals(str2));  // Output: true\n\n// Using == to compare references\nSystem.out.println(str1 == str2);  // Output: true (only because both refer to the same literal)\n\n// Using compareTo() for lexicographical comparison\nSystem.out.println(str1.compareTo(str2));  // Output: 0 (strings are equal)\n```"
+    },
+    "What is the difference between == and .equals() in Strings?": {
+        "label": "What is the difference between == and .equals() in Strings?",
+        "answer": "In Java, `==` compares the memory reference of two `String` objects to check if they refer to the same object, while `.equals()` compares the content of two `String` objects to see if they have the same sequence of characters.",
+        "code": "```java\nString str1 = new String(\"Hello\");\nString str2 = new String(\"Hello\");\n\nSystem.out.println(str1 == str2);  // Output: false (different memory locations)\nSystem.out.println(str1.equals(str2));  // Output: true (content is the same)\n```"
+    },
+    "What are some common String methods (e.g., length(), substring(), toUpperCase())?": {
+        "label": "What are some common String methods (e.g., length(), substring(), toUpperCase())?",
+        "answer": "Java's `String` class provides many useful methods, including:\n- `length()`: Returns the length of the string.\n- `substring()`: Extracts a portion of the string.\n- `toUpperCase()`: Converts the string to uppercase.\n- `toLowerCase()`: Converts the string to lowercase.\n- `trim()`: Removes leading and trailing spaces.",
+        "code": "```java\nString str = \" Hello, World! \";\nSystem.out.println(str.length());         // Output: 15\nSystem.out.println(str.substring(1, 5));  // Output: Hell\nSystem.out.println(str.toUpperCase());    // Output:  HELLO, WORLD!\nSystem.out.println(str.trim());           // Output: Hello, World!\n```"
+    },
+    "What is the String.format() method?": {
+        "label": "What is the String.format() method?",
+        "answer": "The `String.format()` method in Java allows you to format strings using placeholders for variables. It is useful for inserting variables into a string in a formatted way.",
+        "code": "```java\nint age = 25;\nString name = \"Alice\";\nString message = String.format(\"%s is %d years old.\", name, age);\nSystem.out.println(message);  // Output: Alice is 25 years old.\n```"
+    },
+    "What is exception handling in Java?": {
+        "label": "What is exception handling in Java?",
+        "answer": "Exception handling in Java is a mechanism to handle runtime errors, so the normal flow of the program can be maintained. It uses `try`, `catch`, `finally`, `throw`, and `throws` to catch and manage exceptions.",
+        "code": "```java\ntry {\n    int result = 10 / 0;  // This will cause an exception\n} catch (ArithmeticException e) {\n    System.out.println(\"Cannot divide by zero\");\n}\n```"
+    },
+    "What are checked and unchecked exceptions?": {
+        "label": "What are checked and unchecked exceptions?",
+        "answer": "Checked exceptions are exceptions that must be either caught or declared in the method signature using `throws`. They are checked at compile-time (e.g., `IOException`). Unchecked exceptions, also known as runtime exceptions, are not checked at compile-time and can occur during program execution (e.g., `NullPointerException`).",
+        "code": "```java\n// Checked Exception\ntry {\n    File file = new File(\"test.txt\");\n    FileReader fr = new FileReader(file);  // IOException\n} catch (IOException e) {\n    e.printStackTrace();\n}\n\n// Unchecked Exception\nint[] numbers = {1, 2, 3};\nSystem.out.println(numbers[3]);  // ArrayIndexOutOfBoundsException\n```"
+    },
+    "What is the try-catch block in Java?": {
+        "label": "What is the try-catch block in Java?",
+        "answer": "The `try-catch` block in Java is used to handle exceptions. The code that may throw an exception is placed inside the `try` block, and the `catch` block catches and handles the exception.",
+        "code": "```java\ntry {\n    int result = 10 / 0;\n} catch (ArithmeticException e) {\n    System.out.println(\"Cannot divide by zero\");\n}\n```"
+    },
+    "What is the finally block?": {
+        "label": "What is the finally block?",
+        "answer": "The `finally` block in Java is used to execute important code, such as resource cleanup, regardless of whether an exception was thrown or caught. It always runs after the `try-catch` block.",
+        "code": "```java\ntry {\n    int result = 10 / 0;\n} catch (ArithmeticException e) {\n    System.out.println(\"Error occurred\");\n} finally {\n    System.out.println(\"This will always execute\");\n}\n```"
+    },
+    "What is the throw keyword?": {
+        "label": "What is the throw keyword?",
+        "answer": "The `throw` keyword in Java is used to explicitly throw an exception. It can be used to throw both checked and unchecked exceptions.",
+        "code": "```java\npublic void validateAge(int age) {\n    if (age < 18) {\n        throw new IllegalArgumentException(\"Age must be 18 or older\");\n    }\n}\n\nvalidateAge(16);  // This will throw an exception\n```"
+    },
+    "What is the throws keyword?": {
+        "label": "What is the throws keyword?",
+        "answer": "The `throws` keyword in Java is used in the method signature to declare that the method may throw one or more exceptions. It informs the calling method that an exception may occur, but the method itself does not handle it.",
+        "code": "```java\npublic void readFile(String filePath) throws IOException {\n    FileReader file = new FileReader(filePath);\n}\n\n// The calling method must handle or declare the exception\ntry {\n    readFile(\"test.txt\");\n} catch (IOException e) {\n    e.printStackTrace();\n}\n```"
+    },
+    "What are custom exceptions in Java?": {
+        "label": "What are custom exceptions in Java?",
+        "answer": "Custom exceptions in Java are user-defined exceptions that extend the `Exception` or `RuntimeException` class. They allow you to create specific exception types for your application's needs.",
+        "code": "```java\nclass InvalidAgeException extends Exception {\n    public InvalidAgeException(String message) {\n        super(message);\n    }\n}\n\npublic void checkAge(int age) throws InvalidAgeException {\n    if (age < 18) {\n        throw new InvalidAgeException(\"Age is below 18\");\n    }\n}\n\n// Usage\ntry {\n    checkAge(16);\n} catch (InvalidAgeException e) {\n    System.out.println(e.getMessage());  // Output: Age is below 18\n}\n```"
+    },
+    "What is the Exception class?": {
+        "label": "What is the Exception class?",
+        "answer": "The `Exception` class in Java is the superclass of all exceptions except for `Error`. It represents conditions that a reasonable application might want to catch. Checked exceptions extend `Exception` directly.",
+        "code": null
+    },
+    "What is the RuntimeException class?": {
+        "label": "What is the RuntimeException class?",
+        "answer": "The `RuntimeException` class in Java is a subclass of `Exception` that represents exceptions that can occur during the program's runtime and do not need to be declared or caught. These are also known as unchecked exceptions.",
+        "code": null
+    },
+    "What is the NullPointerException?": {
+        "label": "What is the NullPointerException?",
+        "answer": "A `NullPointerException` in Java occurs when a program attempts to use an object reference that has not been initialized (i.e., it points to `null`). This is an unchecked exception.",
+        "code": "```java\nString str = null;\nSystem.out.println(str.length());  // This will throw NullPointerException\n```"
+    },
+    "What is the difference between an error and an exception?": {
+        "label": "What is the difference between an error and an exception?",
+        "answer": "An `Error` in Java represents serious problems that a program should not try to catch, such as `OutOfMemoryError`. Exceptions, on the other hand, are conditions that a program can handle, such as file not found or division by zero.",
+        "code": null
+    },
+    "What is exception propagation?": {
+        "label": "What is exception propagation?",
+        "answer": "Exception propagation in Java refers to how an exception moves up the call stack when it is not caught in the current method. It keeps propagating back to previous methods in the stack until it is caught or reaches the top of the stack.",
+        "code": "```java\npublic void method1() {\n    method2();\n}\n\npublic void method2() {\n    int result = 10 / 0;  // ArithmeticException\n}\n\n// The exception will propagate back from method2 to method1 unless caught\ntry {\n    method1();\n} catch (ArithmeticException e) {\n    System.out.println(\"Exception caught\");  // Output: Exception caught\n}\n```"
+    },
+    "What is input and output (I/O) in Java?": {
+        "label": "What is input and output (I/O) in Java?",
+        "answer": "Input and Output (I/O) in Java refers to the process of reading data from an external source (input) and writing data to an external destination (output). Java provides a rich set of I/O libraries to handle data from different sources, such as files, network streams, and the console.",
+        "code": null
+    },
+    "What is the Scanner class in Java?": {
+        "label": "What is the Scanner class in Java?",
+        "answer": "The `Scanner` class in Java is used to read input from various sources like the console, files, or strings. It is part of the `java.util` package and provides methods to parse primitive types and strings.",
+        "code": "```java\nimport java.util.Scanner;\n\nScanner scanner = new Scanner(System.in);\nSystem.out.print(\"Enter your name: \");\nString name = scanner.nextLine();\nSystem.out.println(\"Hello, \" + name);\n```"
+    },
+    "What is the difference between Scanner and BufferedReader?": {
+        "label": "What is the difference between Scanner and BufferedReader?",
+        "answer": "`Scanner` and `BufferedReader` are both used to read input, but they have some key differences:\n- `Scanner` can parse primitive types and strings easily, but it is slower due to internal parsing.\n- `BufferedReader` is faster when reading large amounts of text and requires more manual parsing of input.",
+        "code": "```java\n// Using Scanner\nScanner scanner = new Scanner(System.in);\nint number = scanner.nextInt();\n\n// Using BufferedReader\nBufferedReader reader = new BufferedReader(new InputStreamReader(System.in));\nint number = Integer.parseInt(reader.readLine());\n```"
+    },
+    "How do I read input from the console?": {
+        "label": "How do I read input from the console?",
+        "answer": "You can read input from the console in Java using classes like `Scanner`, `BufferedReader`, or `Console`. `Scanner` is the most commonly used class for this purpose.",
+        "code": "```java\nimport java.util.Scanner;\n\nScanner scanner = new Scanner(System.in);\nSystem.out.print(\"Enter your age: \");\nint age = scanner.nextInt();\nSystem.out.println(\"Your age is \" + age);\n```"
+    },
+    "How do I write to a file in Java?": {
+        "label": "How do I write to a file in Java?",
+        "answer": "To write to a file in Java, you can use classes like `FileWriter`, `BufferedWriter`, or `PrintWriter`. These classes allow you to write characters or strings to a file.",
+        "code": "```java\nimport java.io.FileWriter;\nimport java.io.IOException;\n\ntry {\n    FileWriter writer = new FileWriter(\"output.txt\");\n    writer.write(\"Hello, World!\");\n    writer.close();\n    System.out.println(\"File written successfully\");\n} catch (IOException e) {\n    e.printStackTrace();\n}\n```"
+    },
+    "How do I read from a file in Java?": {
+        "label": "How do I read from a file in Java?",
+        "answer": "You can read from a file in Java using classes like `FileReader`, `BufferedReader`, or `Scanner`. `BufferedReader` is commonly used for efficient reading of large files.",
+        "code": "```java\nimport java.io.BufferedReader;\nimport java.io.FileReader;\nimport java.io.IOException;\n\ntry {\n    BufferedReader reader = new BufferedReader(new FileReader(\"input.txt\"));\n    String line;\n    while ((line = reader.readLine()) != null) {\n        System.out.println(line);\n    }\n    reader.close();\n} catch (IOException e) {\n    e.printStackTrace();\n}\n```"
+    },
+    "What is serialization in Java?": {
+        "label": "What is serialization in Java?",
+        "answer": "Serialization in Java is the process of converting an object into a byte stream so it can be saved to a file or transmitted over a network. Deserialization is the process of reconstructing the object from the byte stream. A class must implement the `Serializable` interface to be serializable.",
+        "code": "```java\nimport java.io.Serializable;\n\nclass Person implements Serializable {\n    private String name;\n    private int age;\n\n    public Person(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n}\n```"
+    },
+    "What is the difference between character streams and byte streams?": {
+        "label": "What is the difference between character streams and byte streams?",
+        "answer": "Character streams in Java are used to read and write data in the form of characters, typically using `Reader` and `Writer` classes. Byte streams, on the other hand, handle data in the form of raw bytes, typically using `InputStream` and `OutputStream` classes. Character streams are preferred for text data, while byte streams are used for binary data like images and files.",
+        "code": "```java\n// Byte Stream (for binary data)\nFileInputStream inputStream = new FileInputStream(\"image.jpg\");\n\n// Character Stream (for text data)\nFileReader reader = new FileReader(\"file.txt\");\n```"
+    },
+    "What is PrintWriter in Java?": {
+        "label": "What is PrintWriter in Java?",
+        "answer": "`PrintWriter` in Java is a class used to write formatted text to an output stream, file, or console. It provides methods for printing various data types and supports automatic line flushing, making it a convenient choice for writing text.",
+        "code": "```java\nimport java.io.PrintWriter;\n\ntry {\n    PrintWriter writer = new PrintWriter(\"output.txt\");\n    writer.println(\"Hello, World!\");\n    writer.close();\n    System.out.println(\"File written successfully\");\n} catch (Exception e) {\n    e.printStackTrace();\n}\n```"
+    },
+    "What is multithreading in Java?": {
+        "label": "What is multithreading in Java?",
+        "answer": "Multithreading in Java is the process of executing multiple threads concurrently, allowing a program to perform multiple tasks at the same time. It helps in optimizing the utilization of the CPU by running tasks in parallel.",
+        "code": null
+    },
+    "What is the difference between a process and a thread?": {
+        "label": "What is the difference between a process and a thread?",
+        "answer": "A process is an independent execution unit that has its own memory space, while a thread is a smaller unit of execution within a process. Threads share the same memory space, making them lightweight compared to processes.",
+        "code": null
+    },
+    "What is the Thread class in Java?": {
+        "label": "What is the Thread class in Java?",
+        "answer": "The `Thread` class in Java represents a thread of execution. It provides methods for creating, starting, and managing threads.",
+        "code": "```java\nclass MyThread extends Thread {\n    public void run() {\n        System.out.println(\"Thread is running\");\n    }\n}\n\nMyThread thread = new MyThread();\nthread.start();  // Starts the thread\n```"
+    },
+    "How do I create a thread in Java?": {
+        "label": "How do I create a thread in Java?",
+        "answer": "You can create a thread in Java by either extending the `Thread` class or implementing the `Runnable` interface.",
+        "code": "```java\n// Extending Thread class\nclass MyThread extends Thread {\n    public void run() {\n        System.out.println(\"Thread running\");\n    }\n}\n\n// Implementing Runnable interface\nclass MyRunnable implements Runnable {\n    public void run() {\n        System.out.println(\"Runnable running\");\n    }\n}\n\nMyThread thread1 = new MyThread();\nMyRunnable runnable = new MyRunnable();\nThread thread2 = new Thread(runnable);\nthread1.start();\nthread2.start();\n```"
+    },
+    "What is the Runnable interface?": {
+        "label": "What is the Runnable interface?",
+        "answer": "The `Runnable` interface in Java represents a task that can be executed by a thread. It contains a single method, `run()`, that must be implemented to define the task to be performed.",
+        "code": "```java\nclass MyTask implements Runnable {\n    public void run() {\n        System.out.println(\"Task is running\");\n    }\n}\n\nThread thread = new Thread(new MyTask());\nthread.start();\n```"
+    },
+    "What is thread synchronization in Java?": {
+        "label": "What is thread synchronization in Java?",
+        "answer": "Thread synchronization in Java is the process of controlling the access of multiple threads to shared resources to prevent data inconsistency. It ensures that only one thread can access a synchronized block or method at a time.",
+        "code": null
+    },
+    "What is the synchronized keyword?": {
+        "label": "What is the synchronized keyword?",
+        "answer": "The `synchronized` keyword in Java is used to lock a method or a block of code, ensuring that only one thread can access it at a time, thus preventing thread interference and data inconsistency.",
+        "code": "```java\nclass Counter {\n    private int count = 0;\n\n    public synchronized void increment() {\n        count++;\n    }\n\n    public int getCount() {\n        return count;\n    }\n}\n```"
+    },
+    "What is the wait() and notify() method in Java?": {
+        "label": "What is the wait() and notify() method in Java?",
+        "answer": "`wait()` and `notify()` are methods used for inter-thread communication. `wait()` causes the current thread to wait until another thread calls `notify()` or `notifyAll()` on the same object, allowing threads to coordinate execution.",
+        "code": "```java\nsynchronized(obj) {\n    obj.wait();   // Waits until notified\n}\n\nsynchronized(obj) {\n    obj.notify(); // Notifies a waiting thread\n}\n```"
+    },
+    "What is deadlock in Java?": {
+        "label": "What is deadlock in Java?",
+        "answer": "Deadlock in Java occurs when two or more threads are blocked forever, waiting for each other to release a resource. This happens when threads hold resources and wait for each other in a circular dependency.",
+        "code": null
+    },
+    "What are thread states in Java?": {
+        "label": "What are thread states in Java?",
+        "answer": "A thread in Java can be in one of the following states: `NEW`, `RUNNABLE`, `BLOCKED`, `WAITING`, `TIMED_WAITING`, or `TERMINATED`. These represent the lifecycle stages of a thread from creation to termination.",
+        "code": null
+    },
+    "What is the ExecutorService in Java?": {
+        "label": "What is the ExecutorService in Java?",
+        "answer": "The `ExecutorService` in Java is part of the `java.util.concurrent` package, providing a framework for managing a pool of threads and executing tasks asynchronously.",
+        "code": "```java\nExecutorService executor = Executors.newFixedThreadPool(2);\nexecutor.submit(() -> System.out.println(\"Task executed\"));\nexecutor.shutdown();\n```"
+    },
+    "What are Callable and Future in Java?": {
+        "label": "What are Callable and Future in Java?",
+        "answer": "`Callable` is an interface that represents a task that can return a result and throw a checked exception. `Future` is used to retrieve the result of a `Callable` task and check if the task is complete.",
+        "code": "```java\nCallable<Integer> task = () -> {\n    return 123;\n};\n\nFuture<Integer> future = executor.submit(task);\nSystem.out.println(future.get());  // Output: 123\n```"
+    },
+    "What is reflection in Java?": {
+        "label": "What is reflection in Java?",
+        "answer": "Reflection in Java allows a program to inspect and manipulate its own structure at runtime. It can be used to access classes, methods, and fields dynamically.",
+        "code": "```java\nClass<?> cls = String.class;\nSystem.out.println(cls.getName());  // Output: java.lang.String\n```"
+    },
+    "What are annotations in Java?": {
+        "label": "What are annotations in Java?",
+        "answer": "Annotations in Java are metadata that provide information about code but do not affect its execution. They can be used to provide information to the compiler, generate code, or define configuration parameters.",
+        "code": "```java\n@Override\npublic String toString() {\n    return \"Override example\";\n}\n```"
+    },
+    "What is a lambda expression in Java?": {
+        "label": "What is a lambda expression in Java?",
+        "answer": "A lambda expression in Java is a concise way to represent a functional interface using an anonymous function. It helps in writing shorter and cleaner code, especially in functional programming.",
+        "code": "```java\nList<Integer> numbers = Arrays.asList(1, 2, 3, 4);\nnumbers.forEach(n -> System.out.println(n));\n```"
+    },
+    "What are streams in Java?": {
+        "label": "What are streams in Java?",
+        "answer": "Streams in Java are a new API introduced in Java 8 for processing sequences of elements. Streams allow functional-style operations like filtering, mapping, and reducing collections of data.",
+        "code": "```java\nList<Integer> numbers = Arrays.asList(1, 2, 3, 4);\nnumbers.stream()\n       .filter(n -> n % 2 == 0)\n       .forEach(System.out::println);  // Output: 2 4\n```"
+    },
+    "What is the Optional class in Java?": {
+        "label": "What is the Optional class in Java?",
+        "answer": "The `Optional` class in Java is used to represent a value that may or may not be present. It helps to avoid null pointer exceptions by providing methods to check if a value is present.",
+        "code": "```java\nOptional<String> name = Optional.ofNullable(null);\nSystem.out.println(name.orElse(\"Unknown\"));  // Output: Unknown\n```"
+    },
+    "What is functional programming in Java?": {
+        "label": "What is functional programming in Java?",
+        "answer": "Functional programming in Java is a paradigm that treats computation as the evaluation of functions. Java 8 introduced functional programming features like lambda expressions, method references, and streams.",
+        "code": null
+    },
+    "What is the Predicate interface?": {
+        "label": "What is the Predicate interface?",
+        "answer": "The `Predicate` interface in Java represents a function that takes one argument and returns a boolean. It is often used in functional programming to test conditions.",
+        "code": "```java\nPredicate<Integer> isEven = n -> n % 2 == 0;\nSystem.out.println(isEven.test(4));  // Output: true\n```"
+    },
+    "What are method references in Java?": {
+        "label": "What are method references in Java?",
+        "answer": "Method references in Java provide a shorthand notation for calling methods using the `::` operator. They can be used in place of lambda expressions when a method is already defined.",
+        "code": "```java\nList<String> names = Arrays.asList(\"Alice\", \"Bob\");\nnames.forEach(System.out::println);  // Method reference\n```"
+    },
+    "What is the difference between == and equals() in Java?": {
+        "label": "What is the difference between == and equals() in Java?",
+        "answer": "`==` checks if two references point to the same object in memory, while `.equals()` checks if two objects have the same content.",
+        "code": "```java\nString str1 = new String(\"Hello\");\nString str2 = new String(\"Hello\");\nSystem.out.println(str1 == str2);       // Output: false\nSystem.out.println(str1.equals(str2));  // Output: true\n```"
+    },
+    "What is garbage collection in Java?": {
+        "label": "What is garbage collection in Java?",
+        "answer": "Garbage collection in Java is an automatic process that frees memory by removing objects that are no longer referenced or used in the program.",
+        "code": null
+    },
+    "What is the difference between heap and stack memory in Java?": {
+        "label": "What is the difference between heap and stack memory in Java?",
+        "answer": "Heap memory is used to store objects and dynamic data, while stack memory is used for static memory allocation, method calls, and local variables. Heap is shared across threads, whereas stack is thread-specific.",
+        "code": null
+    },
+    "What is a ClassLoader in Java?": {
+        "label": "What is a ClassLoader in Java?",
+        "answer": "A `ClassLoader` in Java is part of the Java Runtime Environment (JRE) responsible for loading Java classes into memory. It dynamically loads classes as needed during runtime.",
+        "code": null
+    },
+    "What is the volatile keyword?": {
+        "label": "What is the volatile keyword?",
+        "answer": "The `volatile` keyword in Java ensures that changes to a variable are immediately visible to all threads. It is used for variables that are accessed by multiple threads.",
+        "code": "```java\nprivate volatile boolean flag = true;\n```"
+    },
+    "What is the transient keyword?": {
+        "label": "What is the transient keyword?",
+        "answer": "The `transient` keyword in Java is used to mark a variable as non-serializable. This means the value of a transient variable will not be saved during object serialization.",
+        "code": "```java\nclass MyClass implements Serializable {\n    private transient int tempData;\n}\n```"
+    },
+    "What are inner classes in Java?": {
+        "label": "What are inner classes in Java?",
+        "answer": "Inner classes in Java are classes defined within another class. They are used to logically group classes that belong together and can access the outer class's members.",
+        "code": "```java\nclass Outer {\n    class Inner {\n        public void display() {\n            System.out.println(\"Inner class\");\n        }\n    }\n}\nOuter.Inner inner = new Outer().new Inner();\ninner.display();\n```"
+    },
+    "What is the clone() method?": {
+        "label": "What is the clone() method?",
+        "answer": "The `clone()` method in Java creates and returns a copy of an object. A class must implement the `Cloneable` interface to allow cloning.",
+        "code": "```java\nclass Person implements Cloneable {\n    public Object clone() throws CloneNotSupportedException {\n        return super.clone();\n    }\n}\n```"
+    },
+    "What is the Object class in Java?": {
+        "label": "What is the Object class in Java?",
+        "answer": "The `Object` class is the root of the Java class hierarchy. Every class in Java inherits from the `Object` class, which provides basic methods like `equals()`, `hashCode()`, and `toString()`.",
+        "code": null
+    },
+    "What is the Singleton design pattern in Java?": {
+        "label": "What is the Singleton design pattern in Java?",
+        "answer": "The Singleton design pattern ensures that a class has only one instance and provides a global point of access to that instance.",
+        "code": "```java\nclass Singleton {\n    private static Singleton instance;\n\n    private Singleton() {}\n\n    public static Singleton getInstance() {\n        if (instance == null) {\n            instance = new Singleton();\n        }\n        return instance;\n    }\n}\n```"
+    },
+    "What is socket programming in Java?": {
+        "label": "What is socket programming in Java?",
+        "answer": "Socket programming in Java allows two or more devices to communicate over a network. Java provides the `Socket` class for client-side communication and the `ServerSocket` class for server-side communication.",
+        "code": "```java\n// Server\nServerSocket serverSocket = new ServerSocket(8080);\nSocket clientSocket = serverSocket.accept();\n\n// Client\nSocket socket = new Socket(\"localhost\", 8080);\n```"
+    },
+    "What is a URL in Java?": {
+        "label": "What is a URL in Java?",
+        "answer": "A `URL` (Uniform Resource Locator) in Java is a class in `java.net` that represents a reference to a web resource on the Internet. It contains information like protocol, host, port, and path.",
+        "code": "```java\nURL url = new URL(\"https://www.example.com\");\nSystem.out.println(url.getHost());  // Output: www.example.com\n```"
+    },
+    "What are HTTP requests in Java?": {
+        "label": "What are HTTP requests in Java?",
+        "answer": "HTTP requests in Java are used to communicate with web servers using the Hypertext Transfer Protocol (HTTP). Java provides classes like `HttpURLConnection` for making GET, POST, and other requests.",
+        "code": "```java\nURL url = new URL(\"https://api.example.com\");\nHttpURLConnection connection = (HttpURLConnection) url.openConnection();\nconnection.setRequestMethod(\"GET\");\nint responseCode = connection.getResponseCode();\n```"
+    },
+    "What is the difference between GET and POST in Java?": {
+        "label": "What is the difference between GET and POST in Java?",
+        "answer": "In Java, `GET` and `POST` are HTTP methods used for communication. `GET` is used to retrieve data from a server, and the parameters are passed in the URL. `POST` is used to send data to the server, with the parameters passed in the request body.",
+        "code": "```java\n// GET Request\nURL url = new URL(\"https://api.example.com/data?param=value\");\nHttpURLConnection conn = (HttpURLConnection) url.openConnection();\nconn.setRequestMethod(\"GET\");\n\n// POST Request\nconn.setRequestMethod(\"POST\");\nconn.setDoOutput(true);\nOutputStream os = conn.getOutputStream();\nos.write(\"param=value\".getBytes());\n```"
+    },
+    "What is the URLConnection class?": {
+        "label": "What is the URLConnection class?",
+        "answer": "The `URLConnection` class in Java represents a communication link between the application and a URL. It is used to read and write data to the specified URL.",
+        "code": "```java\nURL url = new URL(\"https://www.example.com\");\nURLConnection connection = url.openConnection();\nInputStream input = connection.getInputStream();\n```"
+    },
+    "What are RESTful web services in Java?": {
+        "label": "What are RESTful web services in Java?",
+        "answer": "RESTful web services in Java follow the principles of REST (Representational State Transfer) architecture. They use standard HTTP methods (GET, POST, PUT, DELETE) and can exchange data in formats like JSON or XML. Java frameworks like JAX-RS are commonly used for building RESTful APIs.",
+        "code": null
+    },
+    "What is the JavaMail API?": {
+        "label": "What is the JavaMail API?",
+        "answer": "The JavaMail API is used to send and receive emails from Java applications. It provides classes like `Session`, `Message`, and `Transport` to handle email operations over protocols like SMTP, POP3, and IMAP.",
+        "code": "```java\nSession session = Session.getInstance(props);\nMessage message = new MimeMessage(session);\nmessage.setFrom(new InternetAddress(\"from@example.com\"));\nmessage.setRecipients(Message.RecipientType.TO, InternetAddress.parse(\"to@example.com\"));\nmessage.setSubject(\"Test Email\");\nmessage.setText(\"Hello from JavaMail\");\nTransport.send(message);\n```"
+    },
+    "What is JDBC in Java?": {
+        "label": "What is JDBC in Java?",
+        "answer": "JDBC (Java Database Connectivity) is an API that enables Java applications to interact with databases. It provides methods to connect to a database, execute queries, and retrieve results.",
+        "code": null
+    },
+    "How do I connect to a database in Java?": {
+        "label": "How do I connect to a database in Java?",
+        "answer": "To connect to a database in Java, you use the `DriverManager.getConnection()` method, passing the database URL, username, and password.",
+        "code": "```java\nConnection conn = DriverManager.getConnection(\"jdbc:mysql://localhost:3306/mydb\", \"user\", \"password\");\n```"
+    },
+    "What is a Statement in JDBC?": {
+        "label": "What is a Statement in JDBC?",
+        "answer": "A `Statement` in JDBC is used to execute SQL queries against a database. It is created from a `Connection` object and can be used to execute SQL `SELECT`, `INSERT`, `UPDATE`, and `DELETE` queries.",
+        "code": "```java\nStatement stmt = conn.createStatement();\nResultSet rs = stmt.executeQuery(\"SELECT * FROM users\");\n```"
+    },
+    "What is a PreparedStatement in JDBC?": {
+        "label": "What is a PreparedStatement in JDBC?",
+        "answer": "A `PreparedStatement` in JDBC is a precompiled SQL statement that can be executed multiple times with different parameters. It helps prevent SQL injection attacks and improves performance.",
+        "code": "```java\nPreparedStatement pstmt = conn.prepareStatement(\"SELECT * FROM users WHERE id = ?\");\npstmt.setInt(1, 1);\nResultSet rs = pstmt.executeQuery();\n```"
+    },
+    "What is a ResultSet in JDBC?": {
+        "label": "What is a ResultSet in JDBC?",
+        "answer": "A `ResultSet` in JDBC is an object that represents the result of executing a SQL query. It provides methods to iterate through the result rows and access column values.",
+        "code": "```java\nResultSet rs = stmt.executeQuery(\"SELECT * FROM users\");\nwhile (rs.next()) {\n    System.out.println(rs.getString(\"name\"));\n}\n```"
+    },
+    "How do I execute a query in JDBC?": {
+        "label": "How do I execute a query in JDBC?",
+        "answer": "To execute a query in JDBC, you create a `Statement` or `PreparedStatement`, call the appropriate method (`executeQuery()` for SELECT or `executeUpdate()` for INSERT, UPDATE, DELETE), and handle the results using a `ResultSet`.",
+        "code": "```java\nStatement stmt = conn.createStatement();\nResultSet rs = stmt.executeQuery(\"SELECT * FROM users\");\n\nPreparedStatement pstmt = conn.prepareStatement(\"INSERT INTO users (name) VALUES (?)\");\npstmt.setString(1, \"John\");\npstmt.executeUpdate();\n```"
+    },
+    "What is a database transaction in Java?": {
+        "label": "What is a database transaction in Java?",
+        "answer": "A database transaction in Java is a sequence of operations performed as a single logical unit of work. JDBC provides transaction control methods like `commit()` and `rollback()` to ensure consistency of data.",
+        "code": "```java\ntry {\n    conn.setAutoCommit(false);\n    Statement stmt = conn.createStatement();\n    stmt.executeUpdate(\"INSERT INTO users (name) VALUES ('John')\");\n    conn.commit();  // Commit the transaction\n} catch (SQLException e) {\n    conn.rollback();  // Roll back the transaction on error\n}\n```"
+    },
+    "What is TDD (Test-Driven Development) in Java?": {
+        "label": "What is TDD (Test-Driven Development) in Java?",
+        "answer": "Test-Driven Development (TDD) is a software development approach where tests are written before the code. In Java, TDD involves writing a failing test, then writing code to pass the test, and finally refactoring the code. Tools like JUnit are commonly used for TDD in Java.",
+        "code": "```java\n// Example of TDD with JUnit\n@Test\npublic void testAddition() {\n    Calculator calc = new Calculator();\n    assertEquals(5, calc.add(2, 3));  // Failing test\n}\n```"
+    },
+    "What is logging in Java (Log4j, SLF4J)?": {
+        "label": "What is logging in Java (Log4j, SLF4J)?",
+        "answer": "Logging in Java refers to recording runtime information about a program's execution for debugging and monitoring purposes. Log4j and SLF4J are popular logging frameworks. Log4j provides powerful logging capabilities, while SLF4J is a simple facade that allows you to plug in different logging frameworks.",
+        "code": "```java\nimport org.apache.logging.log4j.Logger;\nimport org.apache.logging.log4j.LogManager;\n\nLogger logger = LogManager.getLogger(MyClass.class);\nlogger.info(\"This is an info message\");\n```"
+    },
+    "What are JUnit tests in Java?": {
+        "label": "What are JUnit tests in Java?",
+        "answer": "JUnit is a widely used testing framework in Java for unit testing. It provides annotations like `@Test`, `@Before`, and `@After`, allowing developers to write and run tests easily to ensure that individual units of code work as expected.",
+        "code": "```java\nimport org.junit.Test;\nimport static org.junit.Assert.*;\n\npublic class CalculatorTest {\n    @Test\n    public void testAdd() {\n        Calculator calc = new Calculator();\n        assertEquals(5, calc.add(2, 3));  // Unit test for add method\n    }\n}\n```"
+    },
+    "What are design patterns in Java?": {
+        "label": "What are design patterns in Java?",
+        "answer": "Design patterns in Java are standard solutions to common software design problems. They are categorized into creational (e.g., Singleton, Factory), structural (e.g., Adapter, Decorator), and behavioral (e.g., Observer, Strategy) patterns. They help improve code reusability, readability, and maintainability.",
+        "code": null
+    },
+    "What is code optimization in Java?": {
+        "label": "What is code optimization in Java?",
+        "answer": "Code optimization in Java involves improving the performance of code by reducing memory usage, execution time, and resource consumption. This can include techniques like minimizing object creation, using efficient algorithms, avoiding unnecessary synchronization, and leveraging compiler optimizations.",
+        "code": null
+    },
+    "What are coding conventions in Java?": {
+        "label": "What are coding conventions in Java?",
+        "answer": "Coding conventions in Java are guidelines for writing readable, maintainable, and consistent code. They include best practices for naming classes, methods, and variables, formatting code, and organizing packages. For example, class names should be in CamelCase, and constants should be in uppercase with underscores.",
+        "code": null
+    },
+    "How do I handle memory leaks in Java?": {
+        "label": "How do I handle memory leaks in Java?",
+        "answer": "To handle memory leaks in Java, you can: \n1. Properly manage object references by setting unused objects to `null`.\n2. Avoid static references that retain objects longer than necessary.\n3. Use tools like JVM profilers (e.g., VisualVM) to detect memory leaks.\n4. Ensure proper usage of resources such as closing streams and connections after use (e.g., using `try-with-resources`).",
+        "code": "```java\n// Example of closing resources to avoid memory leaks\ntry (BufferedReader reader = new BufferedReader(new FileReader(\"file.txt\"))) {\n    // Use the reader\n} catch (IOException e) {\n    e.printStackTrace();\n}\n```"
     }
 }

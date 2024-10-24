@@ -134,6 +134,7 @@ body {
     width: 50px;
     height: 50px;
     margin-left: 10px;
+    text-align: center;
     cursor: pointer;
     font-size: 20px;
     border-radius: 4px;
@@ -208,14 +209,13 @@ code {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin: 12px 0;
     padding: 0 15px;
 }
 
 /* Suggestion Button Styling */
 .suggestion-button {
     padding: 8px 16px;
-    background-color: #365880;
+    background-color: #367180;
     color: #FFF;
     border: 1px solid #4B6EAF;
     border-radius: 4px;
@@ -224,13 +224,12 @@ code {
     font-family: 'JetBrains Mono', 'Consolas', monospace;
     transition: all 0.2s ease;
     white-space: nowrap;
-    max-width: 200px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .suggestion-button:hover {
-    background-color: #4B6EAF;
+    background-color: #3e9287;
     border-color: #5A7FBF;
 }
 
