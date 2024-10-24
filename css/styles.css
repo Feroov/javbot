@@ -78,7 +78,7 @@ body {
     color: #FFF;
     align-self: flex-start;
     text-align: left;
-    margin-left: 10px;
+    margin-left: 15px;
     margin-right: auto;
     border: 1px solid #3D5A8C;
 }
@@ -280,4 +280,56 @@ pre {
 .copy-button.copied {
     background-color: #2D4A6D;
     border-color: #4B6EAF;
+}
+
+.bot-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+#bot-face {
+    position: relative;
+    z-index: 10;
+}
+
+#splash-container {
+    position: relative;
+    flex-grow: 1;
+}
+
+
+.splash-bubble {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) translateX(-20px);
+    background: white;
+    padding: 8px 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-family: monospace;
+    font-size: 14px;
+    white-space: nowrap;
+    color: #333;
+}
+
+.splash-bubble::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 16px;
+    height: 16px;
+    background: white;
+    z-index: -1;
+}
+
+.splash-bubble.show {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
 }

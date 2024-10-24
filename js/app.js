@@ -35,7 +35,7 @@ const inputProcessor = {
   // Process user input to extract intent and context
   processInput(input) {
     const normalizedInput = input.toLowerCase().trim();
-    
+
     return {
       type: this.determineQueryType(normalizedInput),
       concepts: this.extractConcepts(normalizedInput),
@@ -51,7 +51,7 @@ const inputProcessor = {
 
     for (const [type, pattern] of Object.entries(this.patterns)) {
       let score = 0;
-      
+
       // Check for exact pattern matches
       for (const variation of pattern.variations) {
         if (input.includes(variation)) {
@@ -78,7 +78,7 @@ const inputProcessor = {
   // Extract relevant Java concepts from the input
   extractConcepts(input) {
     const foundConcepts = [];
-    
+
     for (const [category, conceptList] of Object.entries(this.concepts)) {
       for (const concept of conceptList) {
         if (input.includes(concept)) {
@@ -98,13 +98,13 @@ const inputProcessor = {
   getConceptContext(input, concept) {
     const words = input.split(' ');
     const conceptIndex = words.findIndex(word => word.includes(concept));
-    
+
     if (conceptIndex === -1) return '';
 
     // Get 3 words before and after the concept for context
     const start = Math.max(0, conceptIndex - 3);
     const end = Math.min(words.length, conceptIndex + 4);
-    
+
     return words.slice(start, end).join(' ');
   },
 
@@ -131,16 +131,16 @@ const inputProcessor = {
   // Calculate confidence score for the match
   calculateConfidence(input) {
     let confidence = 0;
-    
+
     // Check for clear question structure
     if (this.hasQuestionStructure(input)) confidence += 0.3;
-    
+
     // Check for Java-specific terms
     if (this.hasJavaTerms(input)) confidence += 0.3;
-    
+
     // Check for context clarity
     if (this.hasCleanContext(input)) confidence += 0.4;
-    
+
     return Math.min(confidence, 1);
   },
 
@@ -164,9 +164,9 @@ const inputProcessor = {
 
   hasCleanContext(input) {
     // Check if the input is relatively clean and focused
-    return input.length > 10 && input.length < 200 && 
-           !input.includes('http') && // No URLs
-           !/[<>{}]/g.test(input);    // No code snippets
+    return input.length > 10 && input.length < 200 &&
+      !input.includes('http') && // No URLs
+      !/[<>{}]/g.test(input);    // No code snippets
   },
 
   // Find the closest matching response from chatData
@@ -179,22 +179,22 @@ const inputProcessor = {
         fallbackSuggestions: []
       };
     }
-  
+
     let bestMatch = null;
     let highestScore = 0;
-  
+
     for (const [key, response] of Object.entries(chatData)) {
       // Skip invalid entries
       if (!key || !response) continue;
-      
+
       const score = calculateMatchScore(processedInput, key, response);
-      
+
       if (score > highestScore) {
         highestScore = score;
         bestMatch = key;
       }
     }
-  
+
     return {
       match: bestMatch,
       confidence: highestScore,
@@ -205,9 +205,9 @@ const inputProcessor = {
   // Calculate match score between processed input and potential response
   calculateMatchScore(processedInput, key, response) {
     if (!response) return 0;
-  
+
     let score = 0;
-    
+
     // Match based on extracted concepts
     processedInput.concepts.forEach(concept => {
       if (key.toLowerCase().includes(concept.concept.toLowerCase())) {
@@ -217,14 +217,14 @@ const inputProcessor = {
         score += 0.2;
       }
     });
-    
+
     // Match based on query type
-    if (processedInput.type && 
-        inputProcessor.patterns[processedInput.type]?.variations.some(v => 
-          key.toLowerCase().includes(v.toLowerCase()))) {
+    if (processedInput.type &&
+      inputProcessor.patterns[processedInput.type]?.variations.some(v =>
+        key.toLowerCase().includes(v.toLowerCase()))) {
       score += 0.3;
     }
-    
+
     // Context matching - only if response.answer exists
     if (response.answer) {
       processedInput.context.forEach(ctx => {
@@ -233,7 +233,7 @@ const inputProcessor = {
         }
       });
     }
-    
+
     return Math.min(score, 1);
   },
 
@@ -242,23 +242,23 @@ const inputProcessor = {
     if (!chatData || !processedInput.concepts) {
       return [];
     }
-  
+
     const suggestions = [];
     const conceptCategories = processedInput.concepts.map(c => c.category).filter(Boolean);
-    
+
     for (const [key, response] of Object.entries(chatData)) {
       // Skip invalid entries
       if (!key || !response) continue;
-      
-      if (conceptCategories.some(category => 
-          inputProcessor.concepts[category]?.some(concept => 
-            key.toLowerCase().includes(concept.toLowerCase()) || 
-            (response.answer && response.answer.toLowerCase().includes(concept.toLowerCase()))
-          ))) {
+
+      if (conceptCategories.some(category =>
+        inputProcessor.concepts[category]?.some(concept =>
+          key.toLowerCase().includes(concept.toLowerCase()) ||
+          (response.answer && response.answer.toLowerCase().includes(concept.toLowerCase()))
+        ))) {
         suggestions.push(key);
       }
     }
-    
+
     return suggestions.slice(0, 3); // Return top 3 suggestions
   }
 };
@@ -415,7 +415,7 @@ function scheduleBlink() {
       const botFaceElement = document.getElementById('bot-face');
       if (botFaceElement) {
         botFaceElement.textContent = expressions.idle.blink;
-        
+
         // Return to default expression after blink
         setTimeout(() => {
           if (botState.currentEmotion === 'idle') {
@@ -443,7 +443,7 @@ function scheduleLookAround() {
       if (botFaceElement) {
         const lookDirection = Math.random() < 0.5 ? 'lookLeft' : 'lookRight';
         botFaceElement.textContent = expressions.idle[lookDirection];
-        
+
         // Return to default expression after looking
         setTimeout(() => {
           if (botState.currentEmotion === 'idle') {
@@ -643,7 +643,7 @@ function handleBotResponse(botResponse, processedInput = null) {
     // If the bot is confused (no valid response found), update face to confused for 3 seconds
     if (!botResponse.answer) {
       updateBotFace('confused');
-      
+
       // Lock in the confused state for 3 seconds before returning to idle
       setTimeout(() => {
         if (botState.currentEmotion === 'confused') { // Ensure the bot is still confused
@@ -668,7 +668,7 @@ function handleBotResponse(botResponse, processedInput = null) {
 
 function processUserInput(input) {
   const normalizedInput = input.toLowerCase().trim();
-  
+
   // Extract key concepts and intentions
   const patterns = {
     question: /^(what|how|why|when|can|could|would|is|are|does)/i,
@@ -679,7 +679,7 @@ function processUserInput(input) {
     example: /(example|show|demonstrate)/i
   };
 
-  const inputType = Object.entries(patterns).find(([_, pattern]) => 
+  const inputType = Object.entries(patterns).find(([_, pattern]) =>
     pattern.test(normalizedInput)
   )?.[0] || 'statement';
 
@@ -730,10 +730,10 @@ function handleUserInput() {
 
   // Add user message to chat
   addMessage('user', { answer: userInput });
-  
+
   try {
     // Find exact match first (case-insensitive)
-    const exactMatch = Object.entries(chatData).find(([key]) => 
+    const exactMatch = Object.entries(chatData).find(([key]) =>
       key.toLowerCase() === userInput.toLowerCase()
     );
 
@@ -742,12 +742,12 @@ function handleUserInput() {
     } else {
       // If no exact match, fall back to the existing input processing
       const processedInput = inputProcessor.processInput(userInput);
-      
+
       // Update bot face based on confidence
       updateBotFace(processedInput.confidence < 0.3 ? 'confused' : 'thinking');
 
       // Find best matching response
-      const { match, confidence, fallbackSuggestions } = 
+      const { match, confidence, fallbackSuggestions } =
         inputProcessor.findBestResponse(processedInput, chatData);
 
       let botResponse;
@@ -756,7 +756,7 @@ function handleUserInput() {
       } else {
         botResponse = {
           answer: `I'm not quite sure about that. Here are some related topics you might be interested in:\n` +
-            (fallbackSuggestions.length > 0 
+            (fallbackSuggestions.length > 0
               ? fallbackSuggestions.map(suggestion => `• ${suggestion}`).join('\n')
               : '• No related topics found. Try asking about basic Java concepts!'),
           code: null
@@ -880,12 +880,12 @@ function extractKeywords(text) {
 // Function to display suggestion buttons below the bot's greeting
 function addSuggestionButtons(topics) {
   const chatBody = document.getElementById('chatBody');
-  
+
   if (!chatBody) {
     console.error('chatBody element not found!');
     return;
   }
-  
+
   const buttonContainer = document.createElement('div');
   buttonContainer.classList.add('button-container');
   buttonContainer.id = 'suggestion-buttons';
@@ -911,12 +911,12 @@ function addSuggestionButtons(topics) {
 // Handle the user clicking a suggestion button
 function handleSuggestedTopicClick(question) {
   removeSuggestionButtons();
-  
+
   // Add user message to chat
   addMessage('user', { answer: question });
 
   // Find exact match first (case-insensitive)
-  const exactMatch = Object.entries(chatData).find(([key]) => 
+  const exactMatch = Object.entries(chatData).find(([key]) =>
     key.toLowerCase() === question.toLowerCase()
   );
 
@@ -926,7 +926,7 @@ function handleSuggestedTopicClick(question) {
   } else {
     // If no exact match, fall back to the existing input processing
     const processedInput = inputProcessor.processInput(question);
-    
+
     // Update bot face based on confidence
     if (processedInput.confidence < 0.3) {
       updateBotFace('confused');
@@ -935,7 +935,7 @@ function handleSuggestedTopicClick(question) {
     }
 
     // Find best matching response
-    const { match, confidence, fallbackSuggestions } = 
+    const { match, confidence, fallbackSuggestions } =
       inputProcessor.findBestResponse(processedInput, chatData);
 
     let botResponse;
@@ -957,9 +957,9 @@ function handleSuggestedTopicClick(question) {
 function findBotResponse(input) {
   // Normalize input
   const normalizedInput = input.toLowerCase().trim();
-  
+
   // Find exact match first (case-insensitive)
-  const exactMatch = Object.entries(chatData).find(([key]) => 
+  const exactMatch = Object.entries(chatData).find(([key]) =>
     key.toLowerCase() === normalizedInput
   );
 
@@ -969,7 +969,7 @@ function findBotResponse(input) {
 
   // If no exact match, use the input processor
   const processedInput = inputProcessor.processInput(normalizedInput);
-  const { match, confidence, fallbackSuggestions } = 
+  const { match, confidence, fallbackSuggestions } =
     inputProcessor.findBestResponse(processedInput, chatData);
 
   if (match && confidence > 0.4) {
@@ -1005,10 +1005,10 @@ function cleanupBotAnimations() {
 function getRandomResponse() {
   const responses = Object.entries(chatData);
   if (responses.length === 0) return null;
-  
+
   const randomIndex = Math.floor(Math.random() * responses.length);
   const [question, response] = responses[randomIndex];
-  
+
   return {
     question,
     response
@@ -1023,10 +1023,10 @@ function handleRandomClick() {
     if (!chatData[randomContent.question.toLowerCase()]) {
       chatData[randomContent.question.toLowerCase()] = randomContent.response;
     }
-    
+
     // Show the question as if user asked it
     addMessage('user', { answer: randomContent.question });
-    
+
     // Show bot's response using unified matching
     updateBotFace('thinking');
     handleBotResponse(randomContent.response);
@@ -1039,7 +1039,7 @@ function handleRandomClick() {
 function addRandomButton() {
   const sendBtn = document.getElementById('sendBtn');
   if (!sendBtn) return;
-  
+
   const randomBtn = document.createElement('button');
   randomBtn.id = 'randomBtn';
   randomBtn.className = 'send-button random-button';
@@ -1080,10 +1080,66 @@ function addRandomButton() {
       flex: 1;
     }
   `;
-  
+
   document.head.appendChild(style);
   randomBtn.addEventListener('click', handleRandomClick);
   sendBtn.parentNode.insertBefore(randomBtn, sendBtn.nextSibling);
+}
+
+const splashTexts = [
+  "System.out.println('Hello World!');",
+  "public static void main(String[] args)",
+  "Objects are everywhere!",
+  "Java runs on billions of devices",
+  "Keep calm and catch exceptions",
+  "Coffee + Java = ❤️",
+  "Inheritance is super()",
+  "Time to implement some interfaces!",
+  "Abstract classes are abstract thoughts",
+  "Garbage collection in progress...",
+  "Polymorphism is morphing...",
+  "Loading Java beans...",
+  "Encapsulation is key!",
+  "Java: Write once, run anywhere",
+  "Compiling happiness...",
+  "Override and overload!"
+];
+
+function showSplashText() {
+  const splashContainer = document.getElementById('splash-container');
+  const randomText = splashTexts[Math.floor(Math.random() * splashTexts.length)];
+
+  // Create new bubble
+  const bubble = document.createElement('div');
+  bubble.className = 'splash-bubble';
+  bubble.textContent = randomText;
+
+  // Remove old bubble if exists
+  while (splashContainer.firstChild) {
+    splashContainer.firstChild.remove();
+  }
+
+  // Add new bubble and show it
+  splashContainer.appendChild(bubble);
+  requestAnimationFrame(() => {
+    bubble.classList.add('show');
+  });
+
+  // Hide bubble after 4 seconds
+  setTimeout(() => {
+    bubble.classList.remove('show');
+    // Remove bubble after fade out animation completes
+    setTimeout(() => {
+      bubble.remove();
+    }, 500);
+  }, 4000);
+}
+
+function initSplashText() {
+  // Show initial splash text
+  showSplashText();
+  // Repeat every 15 seconds
+  setInterval(showSplashText, 15000);
 }
 
 window.onload = () => {
@@ -1092,6 +1148,8 @@ window.onload = () => {
   startIdleAnimations();
   updateBotFace('happy');
   addRandomButton();
+  initSplashText();
 };
+
 
 window.addEventListener('unload', cleanupBotAnimations);
