@@ -25,7 +25,8 @@ const inputProcessor = {
   // Core Java concepts for topic matching
   concepts: {
     basics: ['variable', 'method', 'class', 'object', 'function', 'type', 'data', 'print'],
-    oop: ['inheritance', 'polymorphism', 'encapsulation', 'abstraction', 'interface'],
+    oop: ['inheritance', 'polymorphism', 'encapsulation', 'abstraction', 'interface', 'method overloading', 'method overriding'],
+
     control: ['loop', 'if', 'else', 'switch', 'condition', 'while', 'for'],
     dataStructures: ['array', 'list', 'map', 'set', 'collection', 'vector'],
     exceptions: ['exception', 'error', 'try', 'catch', 'finally', 'throw'],
@@ -45,25 +46,30 @@ const inputProcessor = {
   },
 
   // Determine the type of query
+  // Updated determineQueryType function
   determineQueryType(input) {
+    const inputLower = input.toLowerCase();
+
+    // Prioritize common phrases with specific weights
+    if (inputLower.startsWith("what is") || inputLower.startsWith("what's")) {
+      return 'definition';
+    }
+    if (inputLower.startsWith("how to") || inputLower.startsWith("how do")) {
+      return 'howTo';
+    }
+
     let maxScore = 0;
     let queryType = 'unknown';
 
     for (const [type, pattern] of Object.entries(this.patterns)) {
       let score = 0;
 
-      // Check for exact pattern matches
       for (const variation of pattern.variations) {
-        if (input.includes(variation)) {
-          score += 2;
-        }
+        if (input.includes(variation)) score += 2;
       }
 
-      // Check for keyword matches
       for (const keyword of pattern.keywords) {
-        if (input.includes(keyword)) {
-          score += 1;
-        }
+        if (input.includes(keyword)) score += 1;
       }
 
       if (score > maxScore) {
@@ -75,24 +81,27 @@ const inputProcessor = {
     return queryType;
   },
 
+
   // Extract relevant Java concepts from the input
   extractConcepts(input) {
     const foundConcepts = [];
+    const normalizedInput = input.toLowerCase();
 
     for (const [category, conceptList] of Object.entries(this.concepts)) {
-      for (const concept of conceptList) {
-        if (input.includes(concept)) {
+      conceptList.forEach(concept => {
+        if (normalizedInput.includes(concept)) {
           foundConcepts.push({
             category,
             concept,
-            context: this.getConceptContext(input, concept)
+            context: this.getConceptContext(normalizedInput, concept)
           });
         }
-      }
+      });
     }
 
     return foundConcepts;
-  },
+  }
+  ,
 
   // Get surrounding context for a matched concept
   getConceptContext(input, concept) {
@@ -457,22 +466,32 @@ function scheduleLookAround() {
     scheduleLookAround();
   }, nextLookDelay);
 }
+const fillerWords = new Set(['then', 'about', 'can', 'you', 'tell', 'me']);
 
 // Enhanced matching function with keyword recognition
 function findClosestMatch(input) {
   const normalizedInput = input.toLowerCase().trim();
 
-  if (chatData[normalizedInput]) {
-    return normalizedInput;
+  // Remove filler words from the input
+  const inputWithoutFillers = normalizedInput
+    .split(' ')
+    .filter(word => !fillerWords.has(word))
+    .join(' ');
+
+  // First, check for an exact match on the cleaned input
+  if (chatData[inputWithoutFillers]) {
+    return inputWithoutFillers;
   }
 
+  // Additional variations for better matching
   const questionVariations = [
-    normalizedInput,
-    `what is ${normalizedInput}?`,
-    `what is a ${normalizedInput}?`,
-    `what are ${normalizedInput}?`,
-    `how do i use ${normalizedInput}?`,
-    `how do i ${normalizedInput}?`
+    inputWithoutFillers,
+    `what is ${inputWithoutFillers}`,
+    `what is a ${inputWithoutFillers}`,
+    `what are ${inputWithoutFillers}`,
+    `how do i use ${inputWithoutFillers}`,
+    `how do i ${inputWithoutFillers}`,
+    `what can you tell me about ${inputWithoutFillers}`
   ];
 
   for (const variation of questionVariations) {
@@ -481,7 +500,8 @@ function findClosestMatch(input) {
     }
   }
 
-  const inputWords = normalizedInput
+  // Fallback keyword-based matching
+  const inputWords = inputWithoutFillers
     .replace(/[?.,!]/g, '')
     .split(' ')
     .filter(word => !['what', 'is', 'a', 'an', 'the', 'in', 'on', 'at', 'to', 'for', 'of'].includes(word));
@@ -507,6 +527,7 @@ function findClosestMatch(input) {
 
   return bestScore > 0 ? bestMatch : null;
 }
+
 
 // Enhanced topic suggestion with categorization
 function suggestTopics() {
@@ -728,43 +749,18 @@ function handleUserInput() {
 
   if (!userInput) return;
 
+  // Log user input and processing steps
+  console.log("User input:", userInput);
+
   // Add user message to chat
   addMessage('user', { answer: userInput });
 
   try {
-    // Find exact match first (case-insensitive)
-    const exactMatch = Object.entries(chatData).find(([key]) =>
-      key.toLowerCase() === userInput.toLowerCase()
-    );
+    // Direct match attempt
+    const botResponse = findBotResponse(userInput);
+    console.log("Bot response selected:", botResponse);
 
-    if (exactMatch && exactMatch[1]) {
-      handleBotResponse(exactMatch[1]);
-    } else {
-      // If no exact match, fall back to the existing input processing
-      const processedInput = inputProcessor.processInput(userInput);
-
-      // Update bot face based on confidence
-      updateBotFace(processedInput.confidence < 0.3 ? 'confused' : 'thinking');
-
-      // Find best matching response
-      const { match, confidence, fallbackSuggestions } =
-        inputProcessor.findBestResponse(processedInput, chatData);
-
-      let botResponse;
-      if (match && confidence > 0.4 && chatData[match]) {
-        botResponse = chatData[match];
-      } else {
-        botResponse = {
-          answer: `I'm not quite sure about that. Here are some related topics you might be interested in:\n` +
-            (fallbackSuggestions.length > 0
-              ? fallbackSuggestions.map(suggestion => `• ${suggestion}`).join('\n')
-              : '• No related topics found. Try asking about basic Java concepts!'),
-          code: null
-        };
-      }
-
-      handleBotResponse(botResponse, processedInput);
-    }
+    handleBotResponse(botResponse);
   } catch (error) {
     console.error('Error in handleUserInput:', error);
     handleBotResponse({
@@ -779,6 +775,7 @@ function handleUserInput() {
     inputElement.value = '';
   }
 }
+
 
 // Event listeners
 document.getElementById('sendBtn').addEventListener('click', handleUserInput);
@@ -955,19 +952,18 @@ function handleSuggestedTopicClick(question) {
 
 // Create a unified matching function to use across all input methods
 function findBotResponse(input) {
-  // Normalize input
   const normalizedInput = input.toLowerCase().trim();
 
-  // Find exact match first (case-insensitive)
+  // Attempt exact match
   const exactMatch = Object.entries(chatData).find(([key]) =>
-    key.toLowerCase() === normalizedInput
+    key.toLowerCase() === normalizedInput || key.toLowerCase() === normalizedInput + "?" // handle missing question mark
   );
 
   if (exactMatch) {
     return exactMatch[1];
   }
 
-  // If no exact match, use the input processor
+  // Continue with processed input as fallback
   const processedInput = inputProcessor.processInput(normalizedInput);
   const { match, confidence, fallbackSuggestions } =
     inputProcessor.findBestResponse(processedInput, chatData);
@@ -976,13 +972,14 @@ function findBotResponse(input) {
     return chatData[match];
   }
 
-  // Return fallback response with suggestions
+  // Return fallback with suggestions if no confident match
   return {
-    answer: `I'm not quite sure about that. Here are some related topics you might be interested in:\n` +
+    answer: `I'm not sure about that. Here are some related topics:\n` +
       fallbackSuggestions.map(suggestion => `• ${suggestion}`).join('\n'),
     code: null
   };
 }
+
 
 // Remove the suggestion buttons from the chat when user interacts
 function removeSuggestionButtons() {
@@ -1109,29 +1106,31 @@ function showSplashText() {
   const splashContainer = document.getElementById('splash-container');
   const randomText = splashTexts[Math.floor(Math.random() * splashTexts.length)];
 
-  // Create new bubble
+  // Remove old bubble with exit animation
+  const oldBubble = splashContainer.querySelector('.splash-bubble');
+  if (oldBubble) {
+    oldBubble.classList.remove('show');
+    oldBubble.classList.add('hide');
+    setTimeout(() => oldBubble.remove(), 500); // Remove after animation
+  }
+
+  // Create and add new bubble
   const bubble = document.createElement('div');
   bubble.className = 'splash-bubble';
   bubble.textContent = randomText;
-
-  // Remove old bubble if exists
-  while (splashContainer.firstChild) {
-    splashContainer.firstChild.remove();
-  }
-
-  // Add new bubble and show it
   splashContainer.appendChild(bubble);
-  requestAnimationFrame(() => {
-    bubble.classList.add('show');
-  });
 
-  // Hide bubble after 4 seconds
+  // Trigger reflow to ensure animation plays
+  bubble.offsetHeight;
+
+  // Add show class to start animation
+  bubble.classList.add('show');
+
+  // Remove bubble after delay
   setTimeout(() => {
     bubble.classList.remove('show');
-    // Remove bubble after fade out animation completes
-    setTimeout(() => {
-      bubble.remove();
-    }, 500);
+    bubble.classList.add('hide');
+    setTimeout(() => bubble.remove(), 500);
   }, 4000);
 }
 

@@ -294,23 +294,42 @@ pre {
     z-index: 10;
 }
 
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%) translateX(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50%) translateX(-40px);
+    }
+}
+
 #splash-container {
     position: relative;
     flex-grow: 1;
 }
 
-
 .splash-bubble {
     position: absolute;
     left: 0;
     top: 50%;
-    transform: translateY(-50%) translateX(-20px);
     background: white;
     padding: 8px 16px;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     opacity: 0;
-    transition: all 0.3s ease;
     font-family: monospace;
     font-size: 14px;
     white-space: nowrap;
@@ -330,6 +349,9 @@ pre {
 }
 
 .splash-bubble.show {
-    opacity: 1;
-    transform: translateY(-50%) translateX(0);
+    animation: slideIn 0.5s ease forwards;
+}
+
+.splash-bubble.hide {
+    animation: slideOut 0.5s ease forwards;
 }
